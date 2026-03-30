@@ -59,6 +59,8 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
+  services.getty.autologinUser = "connor";
+
   users.users.connor = {
     isNormalUser = true;
     password = "random";
@@ -68,7 +70,7 @@
     ];
   };
 
-  # programs.firefox.enable = true;
+  programs.firefox.enable = true;
 
   programs.hyprland = {
     enable = true;
