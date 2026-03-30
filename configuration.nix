@@ -19,6 +19,7 @@
   networking.networkmanager.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
@@ -85,7 +86,12 @@
 
   hardware = {
     nvidia.modesetting.enable = true;
+    nvidia.open = false;
+    graphics.enable = true;
+    graphics.enable32Bit = true;
   };
+
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
