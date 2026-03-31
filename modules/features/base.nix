@@ -18,7 +18,7 @@ in
   };
 
   # Otherwise, keep in user space
-  flake.modules.systemPackages = { pkgs, ... }: {
+  flake.modules.homeManager.base = { pkgs, ... }: {
     home.packages = tools pkgs;
   };
 }
