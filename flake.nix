@@ -5,6 +5,15 @@
     # Latest Versions
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
+    # Dendritic Pattern
+    flake-parts.url = "github:hercules-ci/flake-parts";
+
+    # Importing Recursively
+    import-tree.url  = "github:vic/import-tree";
+
+    # Configuring Programs
+    wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+
     # Manager for user dotfiles and packages
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -12,36 +21,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations = {
-      "desktop" = nixpkgs.lib.nixosSystem { # could we template this "{name}"
-       system = "x86-64-linux"; # could we template this "{arch}"
-       specialArgs = { inherit inputs; };
-       
-       modules = [
-         ./hosts/desktop/default.nix # could we template this ./hosts/{name}/default.nix
-
-         home-manager.nixosModules.home-manager
-         {
-           home-manager.users.csimms = {
-             imports = [
-               ./modules/user/core.nix
-               ./modules/user/ui.nix
-             ];
-           };
-         }
-       ];
-      };
-    };
-    homeConfigurations = {
-      "csimms@macbook" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages."aarch64-darwin";
-        extraSpecialArgs = { inherit inputs; };
- 
-        modules = [
-          ./modules/user/core.nix
-        ];
-      };
-    };
-  };
+  outputs = inputs: inputs.flake-parts.lib.mkFlake
+    { inherit inputs; }
+    (inputs.import-tree ./modules);
 }
