@@ -1,10 +1,17 @@
 { self, inputs, ... }: {
-  flake.nixosModules.desktopConfiguration = { pkgs, lib, ... }: {
+  flake.modules.nixos.desktopConfiguration = { pkgs, lib, ... }: {
     imports = [
-      self.nixosModules.desktopHardware
-      self.nixosModules.core
-      self.nixosModules.niri
+      self.modules.nixos.desktopHardware
+      self.modules.nixos.core
+      self.modules.nixos.niri
     ];
+
+    home-manager.users.csimms = {
+      imports = [
+        self.modules.homeManager.core
+        self.modules.homeManager.niri
+      ];
+    };
 
     # kernel level stuff, may need to move elsewhere...
 

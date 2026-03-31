@@ -2,7 +2,7 @@
 
 {
   # OS Level
-  flake.nixosModules.niri = { pkgs, ... }: {
+  flake.modules.nixos.niri = { pkgs, ... }: {
     programs.niri = {
       enable = true;
       package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
@@ -10,7 +10,7 @@
   };
 
   # User Level (Dotfiles/user-apps related to Niri)
-  flake.homeManagerModules.niri = { pkgs, ... }: {
+  flake.modules.homeManager.niri = { pkgs, ... }: {
     home.packages = with pkgs; [
       
     ];

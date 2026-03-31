@@ -1,10 +1,13 @@
+{ self, inputs, ... }:
+
 let
   userName = "csimms";
 in
 { 
   # OS Level
-  flake.nixosModules.core = {
+  flake.modules.nixos.core = {
     
+    # What happens if we don't have OS level authority? But we still can use home-manager?
     imports = [
       inputs.home-manager.nixosModules.home-manager
     ];
@@ -27,7 +30,7 @@ in
   };
 
   # User Level
-  flake.homeManagerModules.core = {
+  flake.modules.homeManager.core = {
     home.username = userName;
     home.homeDirectory = "/home/${userName}";
     home.stateVersion = "25.11";
