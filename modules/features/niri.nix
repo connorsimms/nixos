@@ -20,15 +20,35 @@
     packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
       settings = {
-        input.keyboard = {
-          xkb.layout = "us";
+        prefer-no-csd = _: {};
+
+        spawn-at-startup = [
+
+        ];
+
+        input = {
+          keyboard = {
+            xkb = {
+              layout = "us";
+              options = "ctrl:nocaps,altwin:swap_alt_win";
+            };
+
+            repeat-delay = 450;
+            repeat-rate = 20;
+          };
         };
 
-        layout.gaps = 5;
+        outputs."Samsung" = {
+          mode = "5120x1440";
+        };
 
         binds = {
           "Mod+T".spawn-sh = lib.getExe pkgs.kitty;
-          "Mod+Q".close-window = null;
+          "Mod+Q".close-window = _: {};
+        };
+
+        layout = {
+          gaps = 5;
         };
       };
     };

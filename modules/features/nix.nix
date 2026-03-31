@@ -1,10 +1,8 @@
 { self, inputs, ... }:
-let
-  appName = "nix";
-in
+
 {
   # NixOS Level
-  flake.modules.nixos.${appName} = { pkgs, ... }: {
+  flake.modules.nixos.nix = {
     nixpkgs.config.allowUnfree = true;
     nix.settings.experimental-features = [
       "nix-command"
@@ -13,11 +11,10 @@ in
   };
 
   # DarwinOS Level
-  flake.modules.darwin.${appName} = { pkgs, ... }: {
+  flake.modules.darwin.nix = { pkgs, ... }: {
   };
 
   # User Level
-  flake.modules.homeManager.${appName} = { pkgs, ... }: {
-    nixpkgs.config.allowUnfree = true;
+  flake.modules.homeManager.nix = { pkgs, ... }: {
   };
 }
