@@ -1,4 +1,4 @@
-{ self, imports, ... }:
+{ self, inputs, ... }:
 let
   name = "cli";
 in

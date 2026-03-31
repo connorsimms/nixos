@@ -1,13 +1,10 @@
 { self, inputs, ... }:
-
 let
   userName = "csimms";
 in
-{ 
-  # OS Level
-  flake.modules.nixos.core = {
-    
-    # What happens if we don't have OS level authority? But we still can use home-manager?
+{
+  # NixOS Level
+  flake.modules.nixos.user = {
     imports = [
       inputs.home-manager.nixosModules.home-manager
     ];
@@ -21,16 +18,14 @@ in
         "wheel"
       ];
     };
+  };
 
-    nixpkgs.config.allowUnfree = true;
-    nix.settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
+  # DarwinOS Level
+  flake.modules.darwin.user = {
   };
 
   # User Level
-  flake.modules.homeManager.core = {
+  flake.modules.homeManager.user = { pkgs, ... }: {
     home.username = userName;
     home.homeDirectory = "/home/${userName}";
     home.stateVersion = "25.11";
