@@ -4,13 +4,14 @@
       self.modules.nixos.desktopHardware
       self.modules.nixos.core
       self.modules.nixos.niri
-      self.modules.nixos.firefox
     ];
 
     home-manager.users.csimms = {
       imports = [
         self.modules.homeManager.core
+        self.modules.homeManager.cli
         self.modules.homeManager.niri
+        self.modules.homeManager.firefox
       ];
     };
 
