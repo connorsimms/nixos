@@ -1,13 +1,13 @@
 input {
+    mod-key "Super"
+
     keyboard {
-        xkb {
-            layout "us"
-            options "alt:swap_alt_win"
-        }
+	repeat-rate 35 
+	repeat-delay 250 
     }
 
     mouse {
-        on
+        // on
         // natural-scroll
         // accel-speed 0.2
         // accel-profile "flat"
@@ -30,14 +30,16 @@ layout {
     center-focused-column "never"
 
     preset-column-widths {
-        proportion 0.33333
-        proportion 0.5
-        proportion 0.66667
+      fixed 1280
+      fixed 2560
     }
 
-    // preset-window-heights { }
+    preset-window-heights { 
+      proportion 0.5
+      proportion 1.0
+    }
 
-    default-column-width { proportion 0.5; }
+    default-column-width { fixed 1280; }
 
     focus-ring {
         width 2
@@ -133,9 +135,8 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "kitty"; }
+    Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "rofi"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.

@@ -1,12 +1,17 @@
 { lib, den, ... }:
 {
-  den.default.nixos.system.stateVersion = "25.11";
-  den.default.homeManager.home.stateVersion = "25.11";
+  den.default.nixos = {
+    system.stateVersion = "25.11";
 
-  den.default.nixos.nix.settings.experimental-features = [ 
-    "nix-command" 
-    "flakes"
-  ];
+    nixpkgs.config.allowUnfree = true;
+
+    nix.settings.experimental-features = [ 
+      "nix-command" 
+      "flakes"
+    ];
+  };
+
+  den.default.homeManager.home.stateVersion = "25.11";
 
   # enable hm by default
   den.schema.user.classes = lib.mkDefault [ "homeManager" ];

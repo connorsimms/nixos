@@ -5,19 +5,28 @@
     nixos =
       { pkgs, ... }:
       {
-        boot.loader.systemd-boot.enable = true;
-        boot.loader.efi.canTouchEfiVariables = true;
+        hardware.graphics = {
+          enable = true;
+          enable32Bit = true;
+        };
 
-        fileSystems."/" =
-          { device = "/dev/disk/by-uuid/00922f2b-037a-40bf-9229-61607070e66c";
-            fsType = "ext4";
+        services.xserver = { 
+          videoDrivers = [ "nvidia" ];
+          xkb = {
+            layout = "us";
+            options = "caps:ctrl_modifier,altwin:swap_alt_win";
           };
+        };
 
-        fileSystems."/boot" =
-          { device = "/dev/disk/by-uuid/2BCB-568F";
-            fsType = "vfat";
-            options = [ "fmask=0022" "dmask=0022" ];
-          };
+        console.useXkbConfig = true;
+
+        hardware.nvidia = {
+          open = false;
+          modesetting.enable = true;
+          powerManagement.enable = false;
+          nvidiaSettings = true;
+          # package = config.boot.kernelPackages.nvidiaPackages.stable;
+        };
 
         environment.systemPackages = with pkgs; [ 
           wget 
