@@ -3,7 +3,6 @@
 # instead of having to reboot each time.
 { inputs, den, ... }:
 {
-
   den.aspects.desktop.includes = [ (den.provides.tty-autologin "csimms") ];
 
   perSystem =
@@ -16,6 +15,8 @@
             host = inputs.self.nixosConfigurations.desktop.config;
           in
           ''
+            export DISPLAY="''${DISPLAY:-:0}"
+            
             ${host.system.build.vm}/bin/run-${host.networking.hostName}-vm "$@"
           '';
       };

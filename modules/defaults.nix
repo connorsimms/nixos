@@ -3,14 +3,14 @@
   den.default.nixos.system.stateVersion = "25.11";
   den.default.homeManager.home.stateVersion = "25.11";
 
+  den.default.nixos.nix.settings.experimental-features = [ 
+    "nix-command" 
+    "flakes"
+  ];
+
   # enable hm by default
   den.schema.user.classes = lib.mkDefault [ "homeManager" ];
 
   # host<->user provides
   den.ctx.user.includes = [ den._.mutual-provider ];
-
-  # TODO: FIX THIS
-  den.aspects.csimms.nixos = {
-
-      };
 }
