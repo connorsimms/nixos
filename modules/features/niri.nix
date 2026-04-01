@@ -23,7 +23,7 @@
         prefer-no-csd = true;
 
         spawn-at-startup = [
-
+	  (lib.getExe self'.packages.myNoctalia)
         ];
 
         input = {
