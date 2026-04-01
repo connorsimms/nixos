@@ -1,0 +1,29 @@
+#!/usr/bin/env zsh
+bindkey -v
+
+setopt HIST_SAVE_NO_DUPS
+
+# Completion
+autoload -Uz compinit && compinit -i
+zstyle ':completion:*' menu select=2
+zmodload zsh/complist
+
+bindkey "^[[A" history-search-backward
+bindkey "^[[B" history-search-backward
+
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+
+PROMPT='%F{blue} %~ %f '
+
+# Aliasing
+alias ls="ls --color=auto"
+alias ll="ls -la"
+
+alias gs='git status'
+alias ga='git add'
+alias gp='git push'
+
+

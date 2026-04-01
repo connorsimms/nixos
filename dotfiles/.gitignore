@@ -1,0 +1,8 @@
+tmux/plugins/
+!tmux/plugins/tpm
+zsh/.zsh_history
+*.sw[a-p]
+Session.vim
+*~
+.DS_Store
+.history

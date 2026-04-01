@@ -1,0 +1,41 @@
+tap "felixkratz/formulae"
+tap "nikitabobko/tap"
+
+# Core
+brew "gcc"
+brew "git"
+brew "cmake"
+brew "llvm"
+brew "python"
+brew "pip"
+brew "man-db"
+
+# Tools
+brew "gh"
+brew "vim"
+brew "neovim"
+brew "tmux"
+brew "zsh"
+brew "bash"
+brew "tlrc"
+brew "ripgrep"
+brew "fzf"
+brew "tree"
+brew "unzip"
+brew "rsync"
+
+# Desktop
+cask "nikitabobko/tap/aerospace"
+cask "karabiner-elements"
+cask "font-0xproto-nerd-font"
+cask "font-hack-nerd-font"
+brew "felixkratz/formulae/sketchybar"
+brew "felixkratz/formulae/borders"
+
+# Apps
+cask "kitty"
+cask "zen"
+cask "spotify"
+cask "discord"
+cask "sioyek"
+
