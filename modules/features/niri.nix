@@ -20,7 +20,7 @@
     packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
       settings = {
-        prefer-no-csd = _: {};
+        prefer-no-csd = true;
 
         spawn-at-startup = [
 
