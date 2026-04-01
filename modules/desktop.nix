@@ -5,7 +5,7 @@
     nixos =
       { pkgs, ... }:
       {
-        boot.loader.grub.enable = true;
+        boot.loader.systemd-boot.enable = true;
         boot.loader.efi.canTouchEfiVariables = true;
 
         fileSystems."/" =
@@ -19,7 +19,11 @@
             options = [ "fmask=0022" "dmask=0022" ];
           };
 
-        environment.systemPackages = [ pkgs.hello ];
+        environment.systemPackages = with pkgs; [ 
+          wget 
+          curl
+        ];
+
         programs.niri.enable = true;
       };
 
@@ -27,7 +31,10 @@
     provides.to-users.homeManager =
       { pkgs, ... }:
       {
-        home.packages = [ pkgs.vim ];
+        home.packages = with pkgs; [ 
+          vim 
+          git 
+        ];
       };
   };
 }

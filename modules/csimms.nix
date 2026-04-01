@@ -8,9 +8,15 @@
     ];
 
     homeManager =
-      { pkgs, ... }:
+      { config, pkgs, ... }:
       {
-        home.packages = [ pkgs.htop ];
+        home.packages = with pkgs; [ 
+          kitty
+          tmux
+          rofi
+        ];
+ 
+        xdg.configFile."niri/config.kdl".source = config.lib.file.mkOutOfStoreSymlink "/home/csimms/nixos/dotfiles/niri/config.kdl";        
       };
 
     # user can provide NixOS configurations
