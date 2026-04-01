@@ -4,8 +4,7 @@
 { inputs, den, ... }:
 {
 
-  # USER TODO: remove this tty-autologin used for the VM
-  den.aspects.igloo.includes = [ (den.provides.tty-autologin "tux") ];
+  den.aspects.desktop.includes = [ (den.provides.tty-autologin "csimms") ];
 
   perSystem =
     { pkgs, ... }:

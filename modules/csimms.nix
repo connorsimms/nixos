@@ -1,7 +1,7 @@
 { den, ... }:
 {
   # user aspect
-  den.aspects.tux = {
+  den.aspects.csimms = {
     includes = [
       den.provides.primary-user
       (den.provides.user-shell "fish")

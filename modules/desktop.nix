@@ -1,6 +1,6 @@
 {
   # host aspect
-  den.aspects.igloo = {
+  den.aspects.desktop = {
     # host NixOS configuration
     nixos =
       { pkgs, ... }:
