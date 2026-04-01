@@ -11,6 +11,7 @@
       { config, pkgs, ... }:
       {
         home.packages = with pkgs; [ 
+          gh
           kitty
           tmux
           rofi
