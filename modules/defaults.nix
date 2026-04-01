@@ -11,7 +11,6 @@
 
   # TODO: FIX THIS
   den.aspects.csimms.nixos = {
-    boot.loader.grub.enable = false;
-    fileSystems."/".device = "/dev/fake";
-  };
+
+      };
 }
