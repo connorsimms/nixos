@@ -15,6 +15,7 @@
           kitty
           tmux
           rofi
+          firefox
         ];
  
         xdg.configFile."niri/config.kdl".source = config.lib.file.mkOutOfStoreSymlink "/home/csimms/nixos/dotfiles/niri/config.kdl";        
