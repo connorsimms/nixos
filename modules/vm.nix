@@ -13,7 +13,7 @@
         name = "vm";
         text =
           let
-            host = inputs.self.nixosConfigurations.igloo.config;
+            host = inputs.self.nixosConfigurations.desktop.config;
           in
           ''
             ${host.system.build.vm}/bin/run-${host.networking.hostName}-vm "$@"
