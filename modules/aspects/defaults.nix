@@ -1,17 +1,30 @@
 { lib, den, __findFile ? __findFile, ... }:
 {
-  den.default.nixos = {
-    system.stateVersion = "25.11";
+  den.default = {
+    nixos = {
+      system.stateVersion = "25.11";
 
-    nixpkgs.config.allowUnfree = true;
+      nixpkgs.config.allowUnfree = true;
 
-    nix.settings.experimental-features = [ 
-      "nix-command" 
-      "flakes"
+      nix.settings.experimental-features = [ 
+        "nix-command" 
+        "flakes"
+      ];
+    };
+
+    darwin = {
+      system.stateVersion = 6;
+    };
+
+    homeManager = {
+      home.stateVersion = "25.11";
+    };
+
+    includes = [
+      <den/hostname>
+      <den/define-user>
     ];
   };
-
-  den.default.homeManager.home.stateVersion = "25.11";
 
   # enable hm by default
   den.schema.user.classes = lib.mkDefault [ "homeManager" ];

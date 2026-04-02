@@ -7,17 +7,20 @@
       (<den/user-shell> "fish")
 
       <personal/niri>
+      <personal/zen-browser>
     ];
 
     homeManager =
       { config, pkgs, ... }:
       {
         home.packages = with pkgs; [ 
+          git
           gh
-          kitty
+          vim
           tmux
-          rofi
+          kitty
           firefox
+          rofi
         ];
  
       };

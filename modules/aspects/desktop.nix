@@ -38,15 +38,5 @@
           curl
         ];
       };
-
-    # host provides default home environment for its users
-    provides.to-users.homeManager =
-      { pkgs, ... }:
-      {
-        home.packages = with pkgs; [ 
-          vim 
-          git 
-        ];
-      };
   };
 }
