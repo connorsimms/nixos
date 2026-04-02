@@ -1,6 +1,6 @@
 { personal, __findFile ? __findFile, ... }:
 {
-  personal.cpp = {
+  dev.cpp = {
     homeManager = { pkgs, ... }: {
       home.packages = with pkgs; [
         # Compile

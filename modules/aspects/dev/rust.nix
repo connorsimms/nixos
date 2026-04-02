@@ -1,6 +1,6 @@
 { personal, __findFile ? __findFile, ... }:
 {
-  personal.rust = {
+  dev.rust = {
     homeManager = { pkgs, ... }: {
       home.packages = with pkgs; [
         cargo           # Package manager
