@@ -1,1 +1,4 @@
 *.swp
+# Nix build artifacts
+result
+result-*

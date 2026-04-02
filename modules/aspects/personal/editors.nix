@@ -3,21 +3,19 @@
   personal.editors = {
     homeManager = { config, pkgs, ... }: {
       
-      # Vim
+      # Vim (No Dependency Config)
       programs.vim = {
         enable = true;
-        defaultEditor = false;
+        # defaultEditor = false;
       };
 
       home.file.".vimrc".source = 
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/vim/.vimrc";
+        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/vim/vimrc";
 
       # Neovim
       programs.neovim = {
         enable = true;
-        defaultEditor = true;
-        viAlias = true;
-        vimAlias = true;
+        # defaultEditor = true;
 
         extraPackages = with pkgs; [
           ripgrep   # Telescope fuzzy finding
