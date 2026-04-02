@@ -7,7 +7,7 @@
       (<den/user-shell> "fish")
 
       <personal/niri>
-      <personal/zen-browser>
+      <personal/firefox>
     ];
 
     homeManager =
