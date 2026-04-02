@@ -4,7 +4,7 @@
     homeManager = { pkgs, ... }: {
       home.packages = with pkgs; [
         # Compile
-        gcc clang ccache
+        gcc ccache
         # Debug
         gdb lldb
         # Build
