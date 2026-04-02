@@ -6,9 +6,9 @@
 
       <personal/cli>
       <personal/editors>
-      <personal/terminal>
-      <personal/niri>
       <personal/firefox>
+      <personal/niri>
+      <personal/terminal>
 
       <dev/cpp>
       <dev/python>

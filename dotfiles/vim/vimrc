@@ -4,10 +4,8 @@ syntax on
 set showmatch
 set nocompatible
 
-if !exists("g:colors_name")
-    set background=dark
-    colorscheme desert 
-endif
+colorscheme retrobox
+set background=dark
 
 " Line numbers
 set number

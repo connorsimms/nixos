@@ -8,8 +8,8 @@
         eza
         fd
         fzf
-	git
-	gh
+	      git
+	      gh
         ripgrep
         tealdeer
         tree
