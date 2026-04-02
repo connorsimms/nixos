@@ -12,5 +12,10 @@
       url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    dotfiles = {
+      url = "github:connorsimms/dotfiles";
+      flake = false;
+    };
   };
 }
