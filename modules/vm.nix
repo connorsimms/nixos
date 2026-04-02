@@ -1,9 +1,9 @@
 # enables `nix run .#vm`. it is very useful to have a VM
 # you can edit your config and launch the VM to test stuff
 # instead of having to reboot each time.
-{ inputs, den, ... }:
+{ inputs, den, __findFile ? __findFile, ... }:
 {
-  den.aspects.desktop.includes = [ (den.provides.tty-autologin "csimms") ];
+  den.aspects.desktop.includes = [ (<den/tty-autologin> "csimms") ];
 
   perSystem =
     { pkgs, ... }:

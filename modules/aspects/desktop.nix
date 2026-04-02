@@ -1,6 +1,11 @@
+{ den, __findFile ? __findFile, ... }:
 {
   # host aspect
   den.aspects.desktop = {
+    includes = [
+      <personal/niri>
+    ];
+
     # host NixOS configuration
     nixos =
       { pkgs, ... }:
@@ -32,8 +37,6 @@
           wget 
           curl
         ];
-
-        programs.niri.enable = true;
       };
 
     # host provides default home environment for its users

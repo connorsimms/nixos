@@ -1,10 +1,12 @@
-{ den, ... }:
+{ den, __findFile ? __findFile, ... }:
 {
   # user aspect
   den.aspects.csimms = {
     includes = [
-      den.provides.primary-user
-      (den.provides.user-shell "fish")
+      <den/primary-user>
+      (<den/user-shell> "fish")
+
+      <personal/niri>
     ];
 
     homeManager =
@@ -18,7 +20,6 @@
           firefox
         ];
  
-        xdg.configFile."niri/config.kdl".source = config.lib.file.mkOutOfStoreSymlink "/home/csimms/nixos/dotfiles/niri/config.kdl";        
       };
 
     # user can provide NixOS configurations

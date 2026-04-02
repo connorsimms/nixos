@@ -1,4 +1,4 @@
-{ lib, den, ... }:
+{ lib, den, __findFile ? __findFile, ... }:
 {
   den.default.nixos = {
     system.stateVersion = "25.11";
@@ -17,5 +17,5 @@
   den.schema.user.classes = lib.mkDefault [ "homeManager" ];
 
   # host<->user provides
-  den.ctx.user.includes = [ den._.mutual-provider ];
+  den.ctx.user.includes = [ <den/mutual-provider> ];
 }
