@@ -1,29 +1,20 @@
 { den, __findFile ? __findFile, ... }:
 {
-  # user aspect
   den.aspects.csimms = {
     includes = [
       <den/primary-user>
-      (<den/user-shell> "fish")
 
+      <personal/cli>
+      <personal/editors>
+      <personal/terminal>
       <personal/niri>
       <personal/firefox>
-    ];
 
-    homeManager =
-      { config, pkgs, ... }:
-      {
-        home.packages = with pkgs; [ 
-          git
-          gh
-          vim
-          tmux
-          kitty
-          firefox
-          rofi
-        ];
- 
-      };
+      <dev/cpp>
+      <dev/python>
+      <dev/rust>
+      <dev/tools>
+    ];
 
     # user can provide NixOS configurations
     # to any host it is included on
