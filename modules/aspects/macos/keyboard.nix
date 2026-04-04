@@ -7,7 +7,7 @@
         remapCapsLockToControl = true;
       };
 
-      casks = [ "karabiner-elements" ];
+      brews = [ "karabiner-elements" ];
     };
 
     homeManager = { config, ... }: {
