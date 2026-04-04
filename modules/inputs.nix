@@ -17,5 +17,9 @@
       url = "github:connorsimms/dotfiles";
       flake = false;
     };
+
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+    };
   };
 }
