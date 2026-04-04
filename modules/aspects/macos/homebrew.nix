@@ -4,6 +4,8 @@
     darwin = { pkgs, ... }: {
       homebrew = {
         enable = true;
+
+        prefix = "/opt/homebrew/bin";
         
         onActivation = {
           autoUpdate = true;
@@ -23,6 +25,11 @@
           "spotify"
         ];
       };
+
+      environment.systemPath = [ "/opt/homebrew/bin" ];
+      programs.zsh.shellInit = ''
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+      '';
     };
   };
 }
