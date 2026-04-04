@@ -7,12 +7,12 @@
         remapCapsLockToControl = true;
       };
 
-      homebrew.casks = [ "karabiner-elements" ];
+      #homebrew.casks = [ "karabiner-elements" ];
     };
 
     homeManager = { config, ... }: {
-      xdg.configFile."karabiner/karabiner.json".source = 
-        config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/karabiner.json";
+      #xdg.configFile."karabiner/karabiner.json".source = 
+      #  config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/karabiner.json";
     };
   };
 }
