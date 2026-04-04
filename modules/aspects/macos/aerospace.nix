@@ -3,7 +3,7 @@
   macos.aerospace = {
     darwin = { ... }: {
       homebrew.taps = [ "nikitabobko/tap" ];
-      homebrew.casks = [ "aerospace" ];
+      #homebrew.casks = [ "aerospace" ];
     };
 
     # Home Manager Configuration

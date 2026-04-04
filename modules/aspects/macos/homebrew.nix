@@ -14,7 +14,6 @@
         caskArgs.no_quarantine = true;
 
         taps = [
-          homebrew/cask
         ];
         
         brews = [
