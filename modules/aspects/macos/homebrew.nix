@@ -11,8 +11,6 @@
           cleanup = "zap";
         };
 
-        caskArgs.no_quarantine = true;
-
         taps = [
         ];
         
