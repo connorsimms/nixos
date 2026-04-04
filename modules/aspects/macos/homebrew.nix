@@ -2,6 +2,12 @@
 {
   macos.homebrew = {
     darwin = { pkgs, ... }: {
+      nix-homebrew = {
+        enable = true;
+        user = "csimms";
+        autoMigrate = true;
+      };
+
       homebrew = {
         enable = true;
 
