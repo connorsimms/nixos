@@ -5,7 +5,7 @@
       homebrew = {
         enable = true;
 
-        prefix = "/opt/homebrew";
+        global.brewfile = true;
         
         onActivation = {
           autoUpdate = true;
