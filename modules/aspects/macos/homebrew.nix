@@ -1,4 +1,4 @@
-{ macos, inputs, config, ... }:
+{ macos, nix-homebrew, ... }:
 {
   macos.homebrew = {
     darwin = { pkgs, ... }: {
