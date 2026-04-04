@@ -5,6 +5,7 @@
       <macos/keyboard> 
       <macos/homebrew> 
       <macos/aerospace> 
+      <macos/jankyborders> 
     ];
   };
 }
