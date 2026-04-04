@@ -26,6 +26,8 @@
         ];
       };
 
+      environment.systemPath = [ "/opt/homebrew/bin" ];
+
       programs.zsh.shellInit = ''
         eval "$(/opt/homebrew/bin/brew shellenv)"
       '';
