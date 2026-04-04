@@ -5,7 +5,7 @@
       homebrew = {
         enable = true;
 
-        prefix = "/opt/homebrew/bin";
+        prefix = "/opt/homebrew";
         
         onActivation = {
           autoUpdate = true;
@@ -26,7 +26,6 @@
         ];
       };
 
-      environment.systemPath = [ "/opt/homebrew/bin" ];
       programs.zsh.shellInit = ''
         eval "$(/opt/homebrew/bin/brew shellenv)"
       '';
