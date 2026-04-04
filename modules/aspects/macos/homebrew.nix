@@ -1,7 +1,16 @@
 { macos, inputs, ... }:
 {
   macos.homebrew = {
-    darwin = { config, pkgs, ... }: {
+
+    imports = [ inputs.nix-homebrew.darwinModules.nix-homebrew ];
+
+    darwin = { pkgs, ... }: {
+      nix-homebrew = {
+        enable = true;
+        user = "csimms";
+        autoMigrate = true;
+      };
+
       homebrew = {
         enable = true;
 
