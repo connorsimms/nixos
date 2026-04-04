@@ -1,7 +1,7 @@
 { macos, ... }:
 {
   macos.homebrew = {
-    darwin = { config, pkgs, ... }: {
+    darwin = { pkgs, ... }: {
       nix-homebrew = {
         enable = true;
         user = "csimms";
