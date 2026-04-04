@@ -7,7 +7,6 @@
       <personal/cli>
       <personal/editors>
       <personal/firefox>
-      <personal/niri>
       <personal/terminal>
 
       <dev/cpp>

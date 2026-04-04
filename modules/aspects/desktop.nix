@@ -1,24 +1,18 @@
 { den, __findFile ? __findFile, ... }:
 {
-  # host aspect
   den.aspects.desktop = {
-    includes = [
-      <personal/niri>
+    includes = [ 
+      <linux/keyboard> 
+      <linux/niri> 
     ];
 
-    # host NixOS configuration
     nixos =
       { pkgs, ... }:
       {
+        # Will eventually organize this
         services.xserver = { 
           videoDrivers = [ "nvidia" ];
-          xkb = {
-            layout = "us";
-            options = "caps:ctrl_modifier,altwin:swap_alt_win";
-          };
         };
-
-        console.useXkbConfig = true;
 
         hardware.graphics = {
           enable = true;
@@ -30,7 +24,6 @@
           modesetting.enable = true;
           powerManagement.enable = false;
           nvidiaSettings = true;
-          # package = config.boot.kernelPackages.nvidiaPackages.stable;
         };
 
         environment.systemPackages = with pkgs; [ 

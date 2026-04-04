@@ -1,6 +1,6 @@
 { personal, __findFile ? __findFile, ... }:
 {
-  personal.APP_NAME = {
+  personal.NAME = {
     # NixOS System Configuration
     nixos = { pkgs, ... }: {
       # environment.systemPackages = [ pkgs.APP_NAME ];
