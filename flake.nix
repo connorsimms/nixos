@@ -6,7 +6,7 @@
   inputs = {
     darwin = {
       url = "github:nix-darwin/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     den.url = "github:vic/den";
     dotfiles = {
@@ -20,7 +20,7 @@
     };
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     import-tree.url = "github:vic/import-tree";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
