@@ -6,6 +6,11 @@
       <linux/niri> 
     ];
 
+    provides.csimms.includes = [
+      <linux/keyboard> 
+      <linux/niri> 
+    ];
+
     nixos =
       { pkgs, ... }:
       {

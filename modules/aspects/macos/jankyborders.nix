@@ -1,4 +1,4 @@
-{ macos, __findFile ? __findFile, ... }:
+{ macos, inputs, __findFile ? __findFile, ... }:
 {
   macos.jankyborders = {
     darwin = { ... }: {
@@ -13,8 +13,8 @@
 
     # Home Manager Configuration
     homeManager = { config, ... }: {
-      #"borders/bordersrc".source = 
-      #  config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/jankyborders/bordersrc";
+      xdg.configFile."borders/bordersrc".source = config.lib.file.mkOutOfStoreSymlink 
+        "${config.home.homeDirectory}/nixos/dotfiles/jankyborders/bordersrc";
     };
   };
 }

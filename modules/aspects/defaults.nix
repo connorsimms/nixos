@@ -14,6 +14,13 @@
 
     darwin = {
       system.stateVersion = 6;
+
+      nixpkgs.config.allowUnfree = true;
+
+      nix.settings.experimental-features = [ 
+        "nix-command" 
+        "flakes"
+      ];
     };
 
     homeManager = {

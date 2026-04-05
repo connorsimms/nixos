@@ -1,7 +1,15 @@
 { den, inputs, __findFile ? __findFile, ... }:
 {
   den.aspects.macbook = {
+
     includes = [ 
+      <macos/keyboard> 
+      <macos/homebrew> 
+      <macos/aerospace> 
+      <macos/jankyborders> 
+    ];
+
+    provides.csimms.includes = [
       <macos/keyboard> 
       <macos/homebrew> 
       <macos/aerospace> 

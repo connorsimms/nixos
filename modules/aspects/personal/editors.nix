@@ -32,6 +32,7 @@
           gruvbox-material
           lualine-nvim
           nvim-web-devicons
+          transparent-nvim
         ];
         
         extraPackages = with pkgs; [
