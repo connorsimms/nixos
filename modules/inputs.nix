@@ -21,5 +21,9 @@
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
+
+    nix-homebrew = {
+      url = "github:zhaofengli/nix-homebrew";
+    };
   };
 }

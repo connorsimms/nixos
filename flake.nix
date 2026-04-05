@@ -24,6 +24,7 @@
     };
     import-tree.url = "github:vic/import-tree";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
     nixpkgs-lib.follows = "nixpkgs";
   };

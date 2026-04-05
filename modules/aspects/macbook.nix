@@ -1,4 +1,4 @@
-{ den, __findFile ? __findFile, ... }:
+{ den, inputs, __findFile ? __findFile, ... }:
 {
   den.aspects.macbook = {
     includes = [ 
@@ -7,5 +7,17 @@
       <macos/aerospace> 
       <macos/jankyborders> 
     ];
+
+    darwin = {
+      imports = [
+        inputs.nix-homebrew.darwinModules.nix-homebrew
+      ];
+
+      nix-homebrew = {
+        enable = true;
+        user = "csimms";
+        autoMigrate = true;
+      };
+    };
   };
 }

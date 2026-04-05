@@ -3,7 +3,12 @@
   macos.jankyborders = {
     darwin = { ... }: {
       homebrew.taps = [ "FelixKratz/formulae" ];
-      homebrew.brews = [ "borders" ];
+      homebrew.brews = [ 
+        { 
+          name = "felixkratz/formulae/borders";
+          restart_service = true;
+        } 
+      ];
     };
 
     # Home Manager Configuration
