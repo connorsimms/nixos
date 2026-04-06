@@ -23,10 +23,16 @@
         syntaxHighlighting.enable = true;
 
         shellAliases = {
+
           ls = "eza --icons";
           ll = "eza -l --icons";
           la = "eza -la --icons";
+
           cat = "bat";
+
+          gs = "git status";
+          ga = "git add";
+          gc = "git commit";
         };
       };
     };

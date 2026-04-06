@@ -2,9 +2,13 @@
 {
   macos.keyboard = {
     darwin = { pkgs, ... }: {
-      system.keyboard = {
-        enableKeyMapping = true;
-        remapCapsLockToControl = true;
+      system = {
+        keyboard = {
+          enableKeyMapping = true;
+          remapCapsLockToControl = true;
+        };
+        defaults.NSGlobalDomain.InitialKeyRepeat = 10;
+        defaults.NSGlobalDomain.KeyRepeat = 1;
       };
 
       homebrew.casks = [ "karabiner-elements" ];

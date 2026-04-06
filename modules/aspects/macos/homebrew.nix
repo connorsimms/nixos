@@ -15,20 +15,17 @@
           cleanup = "zap";
         };
 
-        taps = [
-        ];
+        taps = [ ];
         
-        brews = [
-        ];
+        brews = [ ];
 
         casks = [
+          "zen"
           "discord"
           "obsidian"
           "spotify"
         ];
       };
-
-      environment.systemPath = [ "/opt/homebrew/bin" ];
 
       programs.zsh.shellInit = ''
         eval "$(/opt/homebrew/bin/brew shellenv)"

@@ -8,6 +8,7 @@
       <personal/editors>
       <personal/firefox>
       <personal/terminal>
+      <personal/sioyek>
 
       <dev/cpp>
       <dev/python>
