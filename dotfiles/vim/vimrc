@@ -39,6 +39,16 @@ set incsearch
 let mapleader = " "
 let maplocalleader = " "
 
+" Yank to system clipboard
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>Y "+Y
+
+" Paste from system clipboard
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
+nnoremap <leader>P "+P
+
 " Split creation
 nnoremap <leader>\ :vsplit<CR>
 nnoremap <leader>- :split<CR>
