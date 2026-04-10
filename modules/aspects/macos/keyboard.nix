@@ -7,8 +7,11 @@
           enableKeyMapping = true;
           remapCapsLockToControl = true;
         };
-        defaults.NSGlobalDomain.InitialKeyRepeat = 10;
-        defaults.NSGlobalDomain.KeyRepeat = 1;
+        defaults = {
+          NSGlobalDomain.InitialKeyRepeat = 10;
+          NSGlobalDomain.KeyRepeat = 1;
+          NSGlobalDomain.ApplePressAndHoldEnabled = false;
+        };
       };
 
       homebrew.casks = [ "karabiner-elements" ];

@@ -26,6 +26,7 @@ set expandtab
 set autoindent
 set smartindent
 set backspace=indent,eol,start
+set noshowmatch
 
 " Searching
 set ignorecase
@@ -69,7 +70,7 @@ nnoremap <Esc> :nohlsearch<CR>
 tnoremap <Esc><Esc> <C-\><C-n>
 
 " File Explorer (Netrw)
-nnoremap <leader>pv :Ex<CR>
+nnoremap <leader>e :Ex<CR>
 nnoremap <leader>l <Plug>NetrwRefresh
 
 " Vim/Tmux Navigation
