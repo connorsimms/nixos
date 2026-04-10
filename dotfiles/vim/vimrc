@@ -4,6 +4,9 @@ syntax on
 set showmatch
 set nocompatible
 
+if has('termguicolors')
+  set termguicolors
+endif
 colorscheme retrobox
 set background=dark
 
