@@ -1,6 +1,6 @@
 { personal, inputs, ... }:
 {
-  personal.editors = {
+  personal.neovim = {
     homeManager = { config, pkgs, ... }: {
 
       programs.neovim = {
@@ -9,21 +9,7 @@
 
         plugins = with pkgs.vimPlugins; [
           nvim-lspconfig
-          (nvim-treesitter.withPlugins (p: [
-            p.markdown
-            p.markdown_inline
-            p.vim
-            p.toml
-            p.bash
-            p.c
-            p.cpp
-            p.python
-            p.lua
-            p.html
-            p.css
-            p.nix
-            p.latex
-          ]))
+          nvim-treesitter.withAllGrammars
           nvim-treesitter-textobjects
 
           plenary-nvim
@@ -53,23 +39,12 @@
         ];
       };
 
-      home.packages = with pkgs; [
-        vim
-      ];
-
-      xdg.configFile."vim" = {
-        #source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/vim";
-        source = ../../../dotfiles/vim;
-      };
-
       xdg.configFile."nvim/init.lua" = {
-        #source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/nvim";
-        source = ./nvim/init.lua;
+        source = inputs.self + "/dotfiles/nvim/init.lua";
       };
 
       xdg.configFile."nvim/lua" = {
-        #source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/nvim";
-        source = ./nvim/lua;
+        source = inputs.self + "/dotfiles/nvim/lua";
         recursive = true;
       };
     };

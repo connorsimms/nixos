@@ -1,3 +1,10 @@
+" Appearance
+if has('termguicolors')
+  set termguicolors
+endif
+set background=dark
+colorscheme retrobox
+
 filetype plugin on  " Filetype-specific plugins
 filetype indent on  " Filetype-specific indentation
 

@@ -1,20 +1,9 @@
 { den, __findFile ? __findFile, ... }:
 {
-  den.aspects.csimms = {
+  den.aspects.cvsimms = {
     includes = [
-      <den/primary-user>
-
-      <personal/cli>
       <personal/vim>
       <personal/neovim>
-      <personal/terminal>
-
-      <personal/sioyek>
-
-      <dev/cpp>
-      <dev/python>
-      <dev/rust>
-      <dev/tools>
     ];
 
     # user can provide NixOS configurations
