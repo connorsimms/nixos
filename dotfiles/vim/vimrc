@@ -1,43 +1,45 @@
-"-- Basics --"
-filetype plugin indent on
+filetype plugin on  " Filetype-specific plugins
+filetype indent on  " Filetype-specific indentation
+
 syntax on
-set showmatch
-set nocompatible
 
-if has('termguicolors')
-  set termguicolors
-endif
-colorscheme retrobox
-set background=dark
-
-" Line numbers
-set number
-set relativenumber
-set signcolumn=number
-set nowrap
-
-" Core behavior
-set hidden
-set mouse=a
-set scrolloff=10
+" Lines
+set number            " Enable line numbering
+set relativenumber    " Relative line numbering
+set nowrap            " Line wrapping
+set cursorline        " Highlight cursor's line
+set scrolloff=5       " Keep lines above/below cursor
+set sidescrolloff=5   " Keep lines left/right cursor
 
 " Indentation
 set tabstop=2
-set softtabstop=2
 set shiftwidth=2
-set expandtab
-set autoindent
+set softtabstop=2
+set expandtab         " Spaces instead of tabs
 set smartindent
+set autoindent
 set backspace=indent,eol,start
-set noshowmatch
 
 " Searching
-set ignorecase
-set smartcase
-set hlsearch
-set incsearch
+set ignorecase        " Case-insensitive searching
+set smartcase         " Unless uppercase is in string
+set hlsearch          " Highlight matches
+set incsearch         " Match while typing
 
-"-- Bindings -- "
+set signcolumn=number
+set colorcolumn=100
+set hidden
+set mouse=v
+
+" Appearance
+if has('termguicolors')
+  set termguicolors
+endif
+
+colorscheme retrobox
+set background=dark
+
+"---------- Bindings ----------"
 
 " Leader Key
 let mapleader = " "
@@ -69,7 +71,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Searching and Terminal
-nnoremap <Esc> :nohlsearch<CR>
+nnoremap <silent> <CR> :nohlsearch<CR>
 tnoremap <Esc><Esc> <C-\><C-n>
 
 " File Explorer (Netrw)
