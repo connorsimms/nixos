@@ -19,6 +19,7 @@
           lualine-nvim
           nvim-web-devicons
           transparent-nvim
+          oil-nvim
         ];
         
         extraPackages = with pkgs; [
