@@ -8,18 +8,13 @@
       <personal/vim>
       <personal/neovim>
       <personal/terminal>
-
       <personal/sioyek>
+      <personal/zen>
 
       <dev/cpp>
       <dev/python>
       <dev/rust>
       <dev/tools>
     ];
-
-    # user can provide NixOS configurations
-    # to any host it is included on
-    provides.to-hosts.nixos = { pkgs, ... }: { 
-    };
   };
 }

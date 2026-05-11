@@ -8,7 +8,7 @@
       url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    den.url = "github:vic/den";
+    den.url = "github:denful/den";
     dotfiles = {
       url = "github:connorsimms/dotfiles";
       flake = false;
@@ -16,7 +16,7 @@
     flake-file.url = "github:vic/flake-file";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
-      inputs.nixpkgs-lib.follows = "nixpkgs-lib";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -26,6 +26,12 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
-    nixpkgs-lib.follows = "nixpkgs";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs = {
+        home-manager.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
   };
 }

@@ -5,6 +5,4 @@
 
   den.homes.x86_64-linux.csimms = { };
   den.homes.aarch64-darwin.csimms = { };
-
-  den.homes.x86_64-linux.cvsimms = { };
 }

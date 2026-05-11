@@ -2,7 +2,7 @@
 {
   den.default = {
     nixos = {
-      system.stateVersion = "25.11";
+      system.stateVersion = "25.05";
 
       nixpkgs.config.allowUnfree = true;
 
@@ -24,7 +24,7 @@
     };
 
     homeManager = {
-      home.stateVersion = "25.11";
+      home.stateVersion = "25.05";
     };
 
     includes = [
@@ -37,5 +37,5 @@
   den.schema.user.classes = lib.mkDefault [ "homeManager" ];
 
   # host<->user provides
-  den.ctx.user.includes = [ <den/mutual-provider> ];
+  den.schema.user.includes = [ <den/mutual-provider> ];
 }

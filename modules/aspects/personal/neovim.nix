@@ -18,7 +18,6 @@
           gruvbox-material
           lualine-nvim
           nvim-web-devicons
-          transparent-nvim
           oil-nvim
         ];
         
