@@ -1,20 +1,20 @@
-{ dev, __findFile ? __findFile, ... }:
+{ ... }:
 {
   dev.tools = {
     homeManager = { pkgs, ... }: {
       home.packages = with pkgs; [
         lldb
-        llvm
+        clang-tools
         hyperfine
       ];
     };
 
-    nixos = { pkgs, config, ... }: {
+    nixos = { pkgs, ... }: {
       environment.systemPackages = with pkgs; [
         gdb
         strace
         valgrind
-        config.boot.kernelPackages.perf 
+        perf
         bpftrace
         bcc
       ];
