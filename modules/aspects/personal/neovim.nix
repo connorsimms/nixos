@@ -30,7 +30,7 @@
           tree-sitter
 
           # LSP
-          nil 
+          nixd
           nixpkgs-fmt
           lua-language-server 
           rust-analyzer 

@@ -1,24 +1,39 @@
-local configs = require('lspconfig.configs')
-
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(args)
-    local opts = { buffer = args.buf }
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)           -- Info
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)    -- Go to definition
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)    -- Find usages
-    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts) -- Rename
-  end,
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  update_in_insert = false,
+  underline = true,
+  severity_sort = true,
+  float = { border = 'rounded' },
 })
 
-vim.lsp.enable('nil_ls')
-vim.lsp.enable('lua_ls')
-vim.lsp.enable('clangd')
-vim.lsp.enable('pyright')
 
-vim.lsp.config('lua_ls', {
-  settings = {
-    Lua = {
-      diagnostics = { globals = { 'vim' } },
+local servers = {
+  nixd = {},
+  pyright = {},
+  clangd = {},
+  lua_ls = {
+    settings = {
+      Lua = {
+        diagnostics = { globals = { 'vim' } },
+        workspace = { checkThirdParty = false },
+        telemetry = { enable = false },
+      },
     },
   },
+}
+
+for server, config in pairs(servers) do
+  require('lspconfig')[server].setup(config)
+end
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('UserLspConfig', { clear = true }),
+  callback = function(ev)
+    local opts = { buffer = ev.buf }
+
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+    vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
+  end,
 })

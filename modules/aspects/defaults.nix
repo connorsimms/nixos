@@ -2,7 +2,7 @@
 {
   den.default = {
     nixos = {
-      system.stateVersion = "25.05";
+      system.stateVersion = "25.11";
 
       nixpkgs.config.allowUnfree = true;
 
@@ -24,7 +24,7 @@
     };
 
     homeManager = {
-      home.stateVersion = "25.05";
+      home.stateVersion = "25.11";
     };
 
     includes = [

@@ -7,4 +7,8 @@ else
     print("Warning: Vim config not found at " .. vimrc_path)
 end
 
+require('vim._core.ui2').enable({
+    enable = true;
+})
+
 require("plugins")
