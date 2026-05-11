@@ -24,7 +24,8 @@ local servers = {
 }
 
 for server, config in pairs(servers) do
-  require('lspconfig')[server].setup(config)
+  vim.lsp.config(server, config)
+  vim.lsp.enable(server)
 end
 
 vim.api.nvim_create_autocmd('LspAttach', {
