@@ -1,14 +1,13 @@
-{ macos, inputs, ... }:
+{ ... }:
 {
   macos.homebrew = {
 
-    darwin = { pkgs, ... }: {
-
+    darwin = { ... }: {
       homebrew = {
         enable = true;
 
         global.brewfile = true;
-        
+
         onActivation = {
           autoUpdate = true;
           upgrade = true;
@@ -16,7 +15,7 @@
         };
 
         taps = [ ];
-        
+
         brews = [ ];
 
         casks = [

@@ -1,40 +1,23 @@
 { den, __findFile ? __findFile, ... }:
 {
   den.aspects.desktop = {
-    includes = [ 
-      <linux/keyboard> 
-      <linux/niri> 
+    includes = [
+      <linux/keyboard>
+      <linux/niri>
+      <linux/graphics>
+      <linux/nvidia>
+      <linux/pipewire>
     ];
 
     provides.csimms.includes = [
-      <linux/keyboard> 
-      <linux/niri> 
+      <linux/niri>
     ];
 
-    nixos =
-      { pkgs, ... }:
-      {
-        # Will eventually organize this
-        services.xserver = { 
-          videoDrivers = [ "nvidia" ];
-        };
-
-        hardware.graphics = {
-          enable = true;
-          enable32Bit = true;
-        };
-
-        hardware.nvidia = {
-          open = false;
-          modesetting.enable = true;
-          powerManagement.enable = false;
-          nvidiaSettings = true;
-        };
-
-        environment.systemPackages = with pkgs; [ 
-          wget 
-          curl
-        ];
-      };
+    nixos = { pkgs, ... }: {
+      environment.systemPackages = with pkgs; [
+        wget
+        curl
+      ];
+    };
   };
 }
