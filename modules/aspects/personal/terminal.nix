@@ -1,4 +1,4 @@
-{ personal, __findFile ? __findFile, ... }:
+{ ... }:
 {
   personal.terminal = {
     homeManager = { config, pkgs, ... }: {
@@ -7,17 +7,17 @@
         kitty
         tmux
       ];
-      
-      xdg.configFile."tmux/tmux.conf".source = 
+
+      xdg.configFile."tmux/tmux.conf".source =
         config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/tmux/tmux.conf";
 
-      xdg.configFile."kitty".source = 
+      xdg.configFile."kitty".source =
         config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/kitty";
 
       # Shell
       programs.zsh = {
         enable = true;
-        
+
         enableCompletion = true;
         autosuggestion.enable = true;
         syntaxHighlighting.enable = true;

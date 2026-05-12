@@ -12,8 +12,15 @@ output "HDMI-A-1" {
     scale 1 
 }
 
+layer-rule {
+  match namespace="^hyprpaper$"
+  place-within-backdrop true
+}
+
 layout {
-    gaps 5 
+    background-color "transparent"
+
+    gaps 7 
 
     center-focused-column "never"
 
@@ -30,7 +37,10 @@ layout {
     default-column-width { fixed 1280; }
 
     focus-ring {
-        width 2
+        on
+        width 1
+        active-color "#ffffff"
+        urgent-color "transparent"
     }
 
     border {
@@ -38,38 +48,52 @@ layout {
     }
 
     shadow {
-        // on
+        off
     }
 
     struts {
-        // left 64
-        // right 64
+        left 16 
+        right 16 
         // top 64
         // bottom 64
     }
 }
 
-spawn-at-startup "kitty"
 spawn-at-startup "zen-beta"
 
 hotkey-overlay {
     skip-at-startup
 }
 
-// omit client-side decorations
 prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
+blur {
+    on
+    passes 3
+    offset 3.0
+    noise 0.02
+    saturation 2.5
+}
+
 window-rule {
+    draw-border-with-background false
     geometry-corner-radius 12
     clip-to-geometry true
+    opacity 0.85
+
+    background-effect {
+      xray true
+      blur true
+    }
 }
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Return hotkey-overlay-title="kitty" { spawn "kitty"; }
+    Mod+Return hotkey-overlay-title="terminal" { spawn "kitty"; }
+    Mod+D hotkey-overlay-title="launcher" { spawn "fuzzel"; }
 
     Mod+O repeat=false { toggle-overview; }
 

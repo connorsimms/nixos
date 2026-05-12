@@ -1,4 +1,4 @@
-{ personal, __findFile ? __findFile, ... }:
+{ ... }:
 {
   personal.cli = {
     homeManager = { pkgs, ... }: {
@@ -8,8 +8,8 @@
         eza
         fd
         fzf
-	      git
-	      gh
+        git
+        gh
         ripgrep
         tealdeer
         tree

@@ -5,6 +5,7 @@
       <den/primary-user>
 
       <personal/cli>
+      <personal/ghostty>
       <personal/vim>
       <personal/neovim>
       <personal/terminal>

@@ -2,14 +2,17 @@
 {
   den.aspects.desktop = {
     includes = [
-      <linux/keyboard>
-      <linux/niri>
       <linux/graphics>
+      <linux/keyboard>
+      <linux/ly>
+      <linux/niri>
       <linux/nvidia>
       <linux/pipewire>
     ];
 
     provides.csimms.includes = [
+      <linux/fuzzel>
+      <linux/hyprpaper>
       <linux/niri>
     ];
 

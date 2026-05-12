@@ -1,11 +1,29 @@
 { ... }:
 {
   linux.niri = {
-    nixos = { ... }: {
+    nixos = { pkgs, ... }: {
       programs.niri.enable = true;
+
+      security.rtkit.enable = true;
+      security.polkit.enable = true;
+      programs.xwayland.enable = true;
+
+      xdg.portal = {
+        enable = true;
+        xdgOpenUsePortal = true;
+        wlr.enable = true;
+        config.common.default = "*";
+        extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+      };
     };
 
-    homeManager = { config, ... }: {
+    homeManager = { config, pkgs, ... }: {
+      services.mako = {
+        enable = true;
+      };
+
+      home.packages = [ pkgs.xwayland-satellite ];
+
       xdg.configFile."niri/config.kdl".source =
         config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/niri/config.kdl";
     };
