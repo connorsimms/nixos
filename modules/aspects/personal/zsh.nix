@@ -29,6 +29,11 @@
           ga = "git add";
           gc = "git commit";
         };
+
+        sessionVariables = {
+          MANPAGER = "sh -c 'col -bx | bat -l man -p'";
+          MANROFFOPT = "-c";
+        };
       };
 
       programs.starship = {

@@ -14,6 +14,7 @@
         settings = {
           shell = "zsh";
 
+          draw_minimal_borders = "yes";
           window_padding_width = 0;
           placement_strategy = "center";
 

@@ -9,6 +9,7 @@
       <personal/kitty>
       <personal/neovim>
       <personal/sioyek>
+      <personal/spotify>
       <personal/tmux>
       <personal/vim>
       <personal/zen>

@@ -5,7 +5,6 @@
       home.packages = with pkgs; [
         btop
         fd
-        fzf
         git
         gh
         ripgrep
@@ -22,6 +21,7 @@
 
       programs.direnv = {
         enable = true;
+        enableZshIntegration = true;
         nix-direnv.enable = true;
       };
 
@@ -30,6 +30,16 @@
         enableZshIntegration = true;
         icons = "auto";
         git = true;
+      };
+
+      programs.fzf = {
+        enable = true;
+        enableZshIntegration = true;
+
+        defaultCommand = "fd --type f";
+        defaultOptions = [
+          "--preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+        ];
       };
 
       programs.zoxide = {

@@ -1,5 +1,8 @@
-filetype plugin on  " Filetype-specific plugins
-filetype indent on  " Filetype-specific indentation
+"==================================================
+" General
+"==================================================
+filetype plugin on
+filetype indent on
 
 syntax on
 
@@ -12,13 +15,20 @@ set scrolloff=5       " Keep lines above/below cursor
 set sidescrolloff=5   " Keep lines left/right cursor
 
 " Indentation
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab         " Spaces instead of tabs
 set smartindent
 set autoindent
 set backspace=indent,eol,start
+
+augroup CustomTabRules
+    autocmd!
+    autocmd FileType lua,nix setlocal tabstop=2 shiftwidth=2 expandtab
+    autocmd FileType c,cpp,python,rust,sh setlocal tabstop=4 shiftwidth=4 expandtab
+    autocmd FileType make setlocal tabstop=4 shiftwidth=4 noexpandtab
+augroup END
 
 " Searching
 set ignorecase        " Case-insensitive searching
@@ -31,8 +41,9 @@ set colorcolumn=100
 set hidden
 set mouse=v
 
-"---------- Bindings ----------"
-
+"==================================================
+" Bindings
+"==================================================
 let mapleader = " "
 let maplocalleader = " "
 
@@ -85,3 +96,25 @@ nnoremap <silent> <C-h> :call TmuxMove('h')<CR>
 nnoremap <silent> <C-j> :call TmuxMove('j')<CR>
 nnoremap <silent> <C-k> :call TmuxMove('k')<CR>
 nnoremap <silent> <C-l> :call TmuxMove('l')<CR>
+
+"==================================================
+" Backups, Swaps, and Undo History
+"==================================================
+let s:state_home = empty($XDG_STATE_HOME) ? expand('~/.local/state') : $XDG_STATE_HOME
+let s:editor_name = has('nvim') ? '/nvim' : '/vim'
+let s:base_dir = s:state_home . s:editor_name
+let s:backup_dir = s:base_dir . '/backup'
+let s:swap_dir   = s:base_dir . '/swap'
+let s:undo_dir   = s:base_dir . '/undo'
+
+if !isdirectory(s:backup_dir) | call mkdir(s:backup_dir, 'p') | endif
+if !isdirectory(s:swap_dir)   | call mkdir(s:swap_dir, 'p')   | endif
+if !isdirectory(s:undo_dir)   | call mkdir(s:undo_dir, 'p')   | endif
+
+let &backupdir = s:backup_dir . '//'
+let &directory = s:swap_dir . '//'
+let &undodir   = s:undo_dir . '//'
+
+set backup
+set swapfile
+set undofile
