@@ -20,7 +20,7 @@ layer-rule {
 layout {
     background-color "transparent"
 
-    gaps 7 
+    gaps 10
 
     center-focused-column "never"
 
@@ -37,10 +37,7 @@ layout {
     default-column-width { fixed 1280; }
 
     focus-ring {
-        on
-        width 1
-        active-color "#ffffff"
-        urgent-color "transparent"
+        off
     }
 
     border {
@@ -81,12 +78,17 @@ window-rule {
     draw-border-with-background false
     geometry-corner-radius 12
     clip-to-geometry true
-    opacity 0.85
+    opacity 0.8
 
     background-effect {
       xray true
       blur true
     }
+}
+
+window-rule {
+    match is-focused=true
+    opacity 0.9
 }
 
 binds {

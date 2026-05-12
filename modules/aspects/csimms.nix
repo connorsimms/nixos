@@ -6,11 +6,13 @@
 
       <personal/cli>
       <personal/ghostty>
-      <personal/vim>
+      <personal/kitty>
       <personal/neovim>
-      <personal/terminal>
       <personal/sioyek>
+      <personal/tmux>
+      <personal/vim>
       <personal/zen>
+      <personal/zsh>
 
       <dev/cpp>
       <dev/python>
