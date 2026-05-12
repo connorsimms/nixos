@@ -6,6 +6,7 @@
 
       security.rtkit.enable = true;
       security.polkit.enable = true;
+      services.udisks2.enable = true;
       programs.xwayland.enable = true;
 
       xdg.portal = {
@@ -20,6 +21,12 @@
     homeManager = { config, pkgs, ... }: {
       services.mako = {
         enable = true;
+      };
+
+      services.udiskie = {
+        enable = true;
+        automount = true;
+        notify = true;
       };
 
       home.packages = [ pkgs.xwayland-satellite ];

@@ -2,23 +2,32 @@
 {
   den.aspects.csimms = {
     includes = [
-      <den/primary-user>
-
       <personal/cli>
-      <personal/ghostty>
-      <personal/kitty>
       <personal/neovim>
-      <personal/sioyek>
-      <personal/spotify>
       <personal/tmux>
       <personal/vim>
-      <personal/zen>
       <personal/zsh>
 
       <dev/cpp>
       <dev/python>
       <dev/rust>
       <dev/tools>
+    ];
+
+    provides.desktop.includes = [
+      <den/primary-user>
+      <personal/kitty>
+      <personal/sioyek>
+      <personal/spotify>
+      <personal/zen>
+    ];
+
+    provides.macbook.includes = [
+      <den/primary-user>
+      <personal/kitty>
+      <personal/sioyek>
+      <personal/spotify>
+      <personal/zen>
     ];
   };
 }

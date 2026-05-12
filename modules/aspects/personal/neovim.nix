@@ -5,7 +5,10 @@
 
       programs.neovim = {
         enable = true;
-	      package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
+        package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
+
+        withPython3 = false;
+        withRuby = false;
 
         plugins = with pkgs.vimPlugins; [
           nvim-lspconfig
@@ -20,20 +23,20 @@
           nvim-web-devicons
           oil-nvim
         ];
-        
+
         extraPackages = with pkgs; [
-          gcc 
+          gcc
           gnumake
-          fd 
-          fzf 
+          fd
+          fzf
           ripgrep
           tree-sitter
 
           # LSP
           nixd
           nixpkgs-fmt
-          lua-language-server 
-          rust-analyzer 
+          lua-language-server
+          rust-analyzer
           pyright
           clang-tools
         ];
