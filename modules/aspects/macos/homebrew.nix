@@ -19,10 +19,7 @@
         brews = [ ];
 
         casks = [
-          "zen"
-          "discord"
           "obsidian"
-          "spotify"
         ];
       };
 

@@ -19,6 +19,7 @@
       <personal/kitty>
       <personal/sioyek>
       <personal/spotify>
+      <personal/vesktop>
       <personal/zen>
     ];
 
@@ -27,6 +28,7 @@
       <personal/kitty>
       <personal/sioyek>
       <personal/spotify>
+      <personal/vesktop>
       <personal/zen>
     ];
   };

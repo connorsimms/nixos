@@ -47,13 +47,6 @@ layout {
     shadow {
         off
     }
-
-    struts {
-        left 16 
-        right 16 
-        // top 64
-        // bottom 64
-    }
 }
 
 spawn-at-startup "zen-beta"
@@ -89,6 +82,14 @@ window-rule {
 window-rule {
     match is-focused=true
     opacity 0.9
+}
+
+window-rule {
+    match title="Vesktop"
+    match app-id="Vesktop"
+    match app-id="spotify_player"
+    default-window-height { proportion 0.50; }
+    default-column-width { proportion 0.25; }
 }
 
 binds {
