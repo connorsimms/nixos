@@ -20,18 +20,21 @@ layer-rule {
 layout {
     background-color "transparent"
 
-    gaps 10
+    gaps 20
 
-    center-focused-column "never"
+    center-focused-column "on-overflow"
+    always-center-single-column
 
     preset-column-widths {
-      fixed 1280
-      fixed 2560
+      proportion 0.25
+      proportion 0.35
+      proportion 0.50
     }
 
     preset-window-heights { 
-      proportion 0.5
-      proportion 1.0
+      proportion 0.50
+      proportion 0.75
+      proportion 1.00
     }
 
     default-column-width { fixed 1280; }
@@ -46,6 +49,11 @@ layout {
 
     shadow {
         off
+    }
+
+    struts {
+        left 0
+        right 0
     }
 }
 

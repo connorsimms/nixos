@@ -18,10 +18,12 @@
           plenary-nvim
           telescope-nvim
           telescope-fzf-native-nvim
+          oil-nvim
+
           gruvbox-material
+          melange-nvim
           lualine-nvim
           nvim-web-devicons
-          oil-nvim
         ];
 
         extraPackages = with pkgs; [
