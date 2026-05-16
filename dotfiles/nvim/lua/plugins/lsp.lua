@@ -9,17 +9,8 @@ vim.diagnostic.config({
 
 
 local servers = {
-  nixd = {
-    settings = {
-      nixd = {
-        formatting = {
-          command = { "nixpkgs-fmt" },
-        },
-      },
-    },
-  },
-  pyright = {},
   clangd = {},
+  jdtls = {},
   lua_ls = {
     settings = {
       Lua = {
@@ -29,6 +20,10 @@ local servers = {
       },
     },
   },
+  nixd = { settings = { nixd = { formatting = { command = { "nixpkgs-fmt" }, }, }, }, },
+  pyright = {},
+  ruff = {},
+  rust_analyzer = {},
 }
 
 for server, config in pairs(servers) do

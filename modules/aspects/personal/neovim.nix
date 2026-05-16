@@ -11,36 +11,54 @@
         withRuby = false;
 
         plugins = with pkgs.vimPlugins; [
-          nvim-lspconfig
+          # Dependencies
+          plenary-nvim
+          nvim-web-devicons
+
+          # Navigation
+          oil-nvim
+          telescope-nvim
+          telescope-fzf-native-nvim
+
+          # Treesitter
           nvim-treesitter.withAllGrammars
           nvim-treesitter-textobjects
 
-          plenary-nvim
-          telescope-nvim
-          telescope-fzf-native-nvim
-          oil-nvim
+          # LSP
+          nvim-lspconfig
 
+          # Theme
           gruvbox-material
           melange-nvim
           lualine-nvim
-          nvim-web-devicons
         ];
 
         extraPackages = with pkgs; [
+          # Build
           gcc
           gnumake
+          tree-sitter
+
+          # Search
           fd
           fzf
           ripgrep
-          tree-sitter
 
-          # LSP
+          # LSP & Formatting
+          clang-tools
+
+          jdk21
+          jdt-language-server
+
+          lua-language-server
+
           nixd
           nixpkgs-fmt
-          lua-language-server
-          rust-analyzer
+
           pyright
-          clang-tools
+          ruff
+
+          rust-analyzer
         ];
       };
 
