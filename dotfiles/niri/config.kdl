@@ -14,6 +14,7 @@ output "HDMI-A-1" {
 
 layer-rule {
   match namespace="^hyprpaper$"
+  match namespace="^wpaperd$"
   place-within-backdrop true
 }
 
@@ -37,7 +38,7 @@ layout {
       proportion 1.00
     }
 
-    default-column-width { fixed 1280; }
+    default-column-width { proportion 0.25; }
 
     focus-ring {
         off
@@ -93,9 +94,7 @@ window-rule {
 }
 
 window-rule {
-    match title="Vesktop"
-    match app-id="Vesktop"
-    match app-id="spotify_player"
+    match title="Spotify"
     default-window-height { proportion 0.50; }
     default-column-width { proportion 0.25; }
 }
@@ -103,7 +102,7 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Return hotkey-overlay-title="terminal" { spawn "kitty"; }
+    Mod+Return hotkey-overlay-title="terminal" { spawn-sh "kitty & sleep 0.2 && niri msg action center-visible-columns"; }
     Mod+D hotkey-overlay-title="launcher" { spawn "fuzzel"; }
 
     Mod+O repeat=false { toggle-overview; }
@@ -185,9 +184,7 @@ binds {
     Mod+Ctrl+F { expand-column-to-available-width; }
 
     Mod+C { center-column; }
-
-    // Center all fully visible columns on screen.
-    Mod+Ctrl+C { center-visible-columns; }
+    Mod+Shift+C { center-visible-columns; }
 
     Mod+Minus { set-column-width "-5%"; }
     Mod+Equal { set-column-width "+5%"; }
