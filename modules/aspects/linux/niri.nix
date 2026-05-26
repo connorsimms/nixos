@@ -16,6 +16,13 @@
         config.common.default = "*";
         extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
       };
+
+      fonts.packages = with pkgs; [
+        nerd-fonts._0xproto
+        nerd-fonts.jetbrains-mono
+        nerd-fonts.fira-code
+        nerd-fonts.iosevka
+      ];
     };
 
     homeManager = { config, pkgs, ... }: {
@@ -29,7 +36,9 @@
         notify = true;
       };
 
-      home.packages = [ pkgs.xwayland-satellite ];
+      home.packages = with pkgs; [
+        xwayland-satellite
+      ];
 
       xdg.configFile."niri/config.kdl".source =
         config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/dotfiles/niri/config.kdl";

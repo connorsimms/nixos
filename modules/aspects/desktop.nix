@@ -8,6 +8,8 @@
       <linux/niri>
       <linux/nvidia>
       <linux/pipewire>
+
+      <linux/steam>
     ];
 
     provides.csimms.includes = [

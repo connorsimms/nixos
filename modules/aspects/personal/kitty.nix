@@ -7,7 +7,7 @@
 
         themeFile = "GruvboxMaterialDarkHard";
         font = {
-          name = "0x Proto Nerd Font";
+          name = "JetBrainsMono Nerd Font";
           size = 11;
         };
 

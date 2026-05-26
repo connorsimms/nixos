@@ -14,7 +14,6 @@ output "HDMI-A-1" {
 
 layer-rule {
   match namespace="^hyprpaper$"
-  match namespace="^wpaperd$"
   place-within-backdrop true
 }
 
@@ -58,6 +57,7 @@ layout {
     }
 }
 
+spawn-at-startup "waybar"
 spawn-at-startup "zen-beta"
 
 hotkey-overlay {
@@ -78,7 +78,7 @@ blur {
 
 window-rule {
     draw-border-with-background false
-    geometry-corner-radius 12
+    geometry-corner-radius 6
     clip-to-geometry true
     opacity 0.8
 
