@@ -6,10 +6,6 @@
         enable = true;
 
         themeFile = "GruvboxMaterialDarkHard";
-        font = {
-          name = "JetBrainsMono Nerd Font";
-          size = 11;
-        };
 
         settings = {
           shell = "zsh";
@@ -18,7 +14,7 @@
           window_padding_width = 0;
           placement_strategy = "center";
 
-          bacgkround_opacity = "0.85";
+          background_opacity = "0.85";
           cursor_trail = 3;
           cursor_trail_decay = "0.1 0.3";
           cursor_trail_start_threshold = 2;
@@ -29,6 +25,32 @@
           "ctrl+j" = "no_op";
           "ctrl+k" = "no_op";
           "ctrl+l" = "no_op";
+        };
+      };
+    };
+
+    provides.desktop = {
+      homeManager = { ... }: {
+        programs.kitty = {
+          font = {
+            name = "JetBrainsMono Nerd Font";
+            size = 11;
+          };
+        };
+      };
+    };
+
+    provides.macbook = {
+      homeManager = { ... }: {
+        programs.kitty = {
+          font = {
+            name = "JetBrainsMono Nerd Font Mono";
+            size = 11;
+          };
+
+          settings = {
+            background_blur = 1;
+          };
         };
       };
     };

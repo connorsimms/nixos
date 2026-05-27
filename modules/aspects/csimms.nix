@@ -16,6 +16,8 @@
 
     provides.desktop.includes = [
       <den/primary-user>
+
+      <personal/fonts>
       <personal/kitty>
       <personal/sioyek>
       <personal/spotify>
@@ -25,6 +27,8 @@
 
     provides.macbook.includes = [
       <den/primary-user>
+
+      <personal/fonts>
       <personal/kitty>
       <personal/sioyek>
       <personal/spotify>

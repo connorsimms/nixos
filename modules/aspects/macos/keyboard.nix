@@ -9,7 +9,7 @@
         };
         defaults = {
           NSGlobalDomain.InitialKeyRepeat = 10;
-          NSGlobalDomain.KeyRepeat = 1;
+          NSGlobalDomain.KeyRepeat = 2;
           NSGlobalDomain.ApplePressAndHoldEnabled = false;
         };
       };

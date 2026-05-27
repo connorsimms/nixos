@@ -8,48 +8,53 @@
         enable = true;
         setAsDefaultBrowser = true;
 
-        policies = 
+        darwinDefaultsId = "org.mozilla.firefox";
+
+        policies =
           let
             mkPluginUrl = id: "https://addons.mozilla.org/firefox/downloads/latest/${id}/latest.xpi";
 
-            mkExtensionEntry = {
-              id,
-              pinned ? false,
-            }: let
-              base = {
-                install_url = mkPluginUrl id;
-                installation_mode = "force_installed";
-              };
-            in
+            mkExtensionEntry =
+              { id
+              , pinned ? false
+              ,
+              }:
+              let
+                base = {
+                  install_url = mkPluginUrl id;
+                  installation_mode = "force_installed";
+                };
+              in
               if pinned
-              then base // {default_area = "navbar";}
+              then base // { default_area = "navbar"; }
               else base;
 
             mkExtensionSettings = builtins.mapAttrs (_: entry:
               if builtins.isAttrs entry
               then entry
-              else mkExtensionEntry {id = entry;});
-        in {
-          ExtensionSettings = mkExtensionSettings {
-            "uBlock0@raymondhill.net" = mkExtensionEntry {
-              id = "ublock-origin";
-              pinned = true;
+              else mkExtensionEntry { id = entry; });
+          in
+          {
+            ExtensionSettings = mkExtensionSettings {
+              "uBlock0@raymondhill.net" = mkExtensionEntry {
+                id = "ublock-origin";
+                pinned = true;
+              };
+            };
+            DisableAppUpdate = true;
+            DisableFeedbackCommands = true;
+            DisableFirefoxStudies = true;
+            DisablePocket = true;
+            DisableTelemetry = true;
+            DontCheckDefaultBrowser = true;
+            NoDefaultBookmarks = true;
+            EnableTrackingProtection = {
+              Value = true;
+              Locked = true;
+              Cryptomining = true;
+              Fingerprinting = true;
             };
           };
-          DisableAppUpdate = true;
-          DisableFeedbackCommands = true;
-          DisableFirefoxStudies = true;
-          DisablePocket = true;
-          DisableTelemetry = true;
-          DontCheckDefaultBrowser = true;
-          NoDefaultBookmarks = true;
-          EnableTrackingProtection = {
-            Value = true;
-            Locked = true;
-            Cryptomining = true;
-            Fingerprinting = true;
-          };
-        };
 
         profiles.default = {
           settings = {

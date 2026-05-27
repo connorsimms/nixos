@@ -16,13 +16,6 @@
         config.common.default = "*";
         extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
       };
-
-      fonts.packages = with pkgs; [
-        nerd-fonts._0xproto
-        nerd-fonts.jetbrains-mono
-        nerd-fonts.fira-code
-        nerd-fonts.iosevka
-      ];
     };
 
     homeManager = { config, pkgs, ... }: {
