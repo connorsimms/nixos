@@ -69,5 +69,15 @@
         };
       };
     };
+
+    nixos = { pkgs, ... }: {
+      programs.zsh.enable = true;
+      users.users.csimms.shell = pkgs.zsh;
+    };
+
+    darwin = { pkgs, ... }: {
+      programs.zsh.enable = true;
+      users.users.csimms.shell = pkgs.zsh;
+    };
   };
 }

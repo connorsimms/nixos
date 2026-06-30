@@ -27,6 +27,15 @@
           # LSP
           nvim-lspconfig
 
+          # Snippets & Completion
+          nvim-cmp
+          cmp-nvim-lsp
+          cmp-buffer
+          cmp-path
+          luasnip
+          cmp_luasnip
+          friendly-snippets
+
           # Theme
           gruvbox-material
           melange-nvim

@@ -69,11 +69,65 @@
               id = "alpha_workspace";
               icon = "𝛼";
               position = 1000;
+              bookmarks = [
+                {
+                  name = "Codeforces";
+                  url = "https://codeforces.com/";
+                }
+                {
+                  name = "AtCoder";
+                  url = "https://atcoder.jp/";
+                }
+                {
+                  name = "Kattis";
+                  url = "https://open.kattis.com/";
+                }
+                {
+                  name = "USACO Guide";
+                  url = "https://usaco.guide/general";
+                }
+                {
+                  name = "CP Algorithms";
+                  url = "https://cp-algorithms.com/";
+                }
+                {
+                  name = "Misc";
+                  url = "https://docs.google.com/spreadsheets/";
+                }
+              ];
             };
             "𝛽" = {
               id = "beta_workspace";
               icon = "𝛽";
               position = 2000;
+              bookmarks = [
+                {
+                  name = "C++";
+                  folder = [
+                    {
+                      name = "CPP Reference";
+                      url = "https://en.cppreference.com/";
+                    }
+                    {
+                      name = "Learn Modern CMake";
+                      url = "https://cliutils.gitlab.io/modern-cmake/README.html";
+                    }
+                  ];
+                }
+                {
+                  name = "Rust";
+                  folder = [
+                    {
+                      name = "Rust STD Reference";
+                      url = "https://doc.rust-lang.org/std/";
+                    }
+                    {
+                      name = "The Rust Programming Language";
+                      url = "https://rust-book.cs.brown.edu/";
+                    }
+                  ];
+                }
+              ];
             };
             "𝛾" = {
               id = "gamma_workspace";

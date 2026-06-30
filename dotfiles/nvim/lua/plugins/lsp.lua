@@ -23,7 +23,16 @@ local servers = {
   nixd = { settings = { nixd = { formatting = { command = { "nixpkgs-fmt" }, }, }, }, },
   pyright = {},
   ruff = {},
-  rust_analyzer = {},
+  rust_analyzer = {
+    settings = {
+      ['rust-analyzer'] = {
+        check = {
+          command = "clippy",
+          extraArgs = { "--", "-W", "clippy::pedantic" },
+        },
+      },
+    },
+  },
 }
 
 for server, config in pairs(servers) do

@@ -14,6 +14,7 @@
 
       environment.systemPackages = with pkgs; [
         protonup-qt
+        heroic
         mangohud
       ];
     };

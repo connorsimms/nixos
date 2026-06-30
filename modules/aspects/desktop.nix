@@ -8,7 +8,7 @@
       <linux/niri>
       <linux/nvidia>
       <linux/pipewire>
-
+      <linux/containers>
       <linux/steam>
     ];
 
@@ -16,6 +16,7 @@
       <linux/fuzzel>
       <linux/hyprpaper>
       <linux/niri>
+      <linux/containers>
     ];
 
     nixos = { pkgs, ... }: {
