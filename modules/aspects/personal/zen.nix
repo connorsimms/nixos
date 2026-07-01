@@ -47,7 +47,6 @@
             DisablePocket = true;
             DisableTelemetry = true;
             DontCheckDefaultBrowser = true;
-            NoDefaultBookmarks = true;
             EnableTrackingProtection = {
               Value = true;
               Locked = true;
@@ -63,71 +62,70 @@
             "zen.welcome-screen.seen" = true;
           };
 
+          bookmarks = {
+            force = true;
+            settings = [
+              {
+                name = "Default";
+                toolbar = true;
+                bookmarks = [
+                  {
+                    name = "Codeforces";
+                    url = "https://codeforces.com/";
+                  }
+                  {
+                    name = "AtCoder";
+                    url = "https://atcoder.jp/";
+                  }
+                  {
+                    name = "Kattis";
+                    url = "https://open.kattis.com/";
+                  }
+                  {
+                    name = "CPP Reference";
+                    url = "https://en.cppreference.com/";
+                  }
+                  {
+                    name = "Rust STD Reference";
+                    url = "https://doc.rust-lang.org/std/";
+                  }
+                ];
+              }
+              {
+                name = "Other";
+                bookmarks = [
+                  {
+                    name = "USACO Guide";
+                    url = "https://usaco.guide/general";
+                  }
+                  {
+                    name = "CP Algorithms";
+                    url = "https://cp-algorithms.com/";
+                  }
+                  {
+                    name = "Misc";
+                    url = "https://docs.google.com/spreadsheets/";
+                  }
+                  {
+                    name = "The Rust Programming Language";
+                    url = "https://rust-book.cs.brown.edu/";
+                  }
+                ];
+              }
+            ];
+          };
+
           spacesForce = true;
           spaces = {
             "𝛼" = {
               id = "alpha_workspace";
               icon = "𝛼";
               position = 1000;
-              bookmarks = [
-                {
-                  name = "Codeforces";
-                  url = "https://codeforces.com/";
-                }
-                {
-                  name = "AtCoder";
-                  url = "https://atcoder.jp/";
-                }
-                {
-                  name = "Kattis";
-                  url = "https://open.kattis.com/";
-                }
-                {
-                  name = "USACO Guide";
-                  url = "https://usaco.guide/general";
-                }
-                {
-                  name = "CP Algorithms";
-                  url = "https://cp-algorithms.com/";
-                }
-                {
-                  name = "Misc";
-                  url = "https://docs.google.com/spreadsheets/";
-                }
-              ];
             };
             "𝛽" = {
               id = "beta_workspace";
               icon = "𝛽";
               position = 2000;
-              bookmarks = [
-                {
-                  name = "C++";
-                  folder = [
-                    {
-                      name = "CPP Reference";
-                      url = "https://en.cppreference.com/";
-                    }
-                    {
-                      name = "Learn Modern CMake";
-                      url = "https://cliutils.gitlab.io/modern-cmake/README.html";
-                    }
-                  ];
-                }
-                {
-                  name = "Rust";
-                  folder = [
-                    {
-                      name = "Rust STD Reference";
-                      url = "https://doc.rust-lang.org/std/";
-                    }
-                    {
-                      name = "The Rust Programming Language";
-                      url = "https://rust-book.cs.brown.edu/";
-                    }
-                  ];
-                }
-              ];
             };
             "𝛾" = {
               id = "gamma_workspace";
@@ -175,4 +173,3 @@
     };
   };
 }
-
