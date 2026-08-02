@@ -7,7 +7,7 @@ curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install | sh -s -- --da
 ```
 Nix for macOS & non-NixOS Linux
 ```bash
-curl --proto '=https' --tlsv1.2 -sSf -L [https://install.determinate.systems/nix](https://install.determinate.systems/nix) | sh -s -- install
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ or
 ```bash
 sudo nixos-rebuild switch --flake github:connorsimms/nixos#desktop
 ```
-Nix-Darwin (sudo privileges)
+#### Nix-Darwin (sudo privileges)
 ```bash
 git clone https://github.com/connorsimms/nixos
 cd nixos
@@ -33,7 +33,7 @@ or
 ```bash
 darwin-rebuild switch --flake github:connorsimms/nixos#macbook
 ```
-Home-Manager (non-sudo privileges)
+#### Home-Manager (non-sudo privileges)
 ```bash
 git clone https://github.com/connorsimms/nixos
 cd nixos
