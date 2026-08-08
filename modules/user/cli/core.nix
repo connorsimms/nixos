@@ -18,6 +18,7 @@
       pkgs.ripgrep
       pkgs.tealdeer
       pkgs.tree
+      pkgs.jq
     ];
 
     programs.bat = {

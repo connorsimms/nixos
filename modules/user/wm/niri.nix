@@ -18,6 +18,6 @@
     ];
 
     xdg.configFile."niri/config.kdl".source =
-      inputs.self + "/nixos/dotfiles/niri/config.kdl";
+      inputs.self + "/dotfiles/niri/config.kdl";
   };
 }

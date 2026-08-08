@@ -25,6 +25,12 @@ local servers = {
   rust_analyzer = {
     settings = {
       ['rust-analyzer'] = {
+        diagnostics = {
+          disabled = { "inactive-code" },
+        },
+        cargo = {
+          features = "all",
+        },
         check = {
           command = "clippy",
           extraArgs = { "--", "-W", "clippy::pedantic" },

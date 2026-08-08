@@ -15,7 +15,7 @@
         init.defaultBranch = "main";
         core.editor = "vim";
       };
-      alias = {
+      aliases = {
         st = "status";
         sw = "switch";
         co = "checkout";

@@ -6,6 +6,7 @@
     ./graphics.nix
     ./nvidia.nix
     ./perf.nix
+    ./cpupower.nix
     ./pipewire.nix
     ./ly.nix
   ];

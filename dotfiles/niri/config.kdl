@@ -57,9 +57,6 @@ layout {
     }
 }
 
-spawn-at-startup "waybar"
-spawn-at-startup "zen-beta"
-
 hotkey-overlay {
     skip-at-startup
 }

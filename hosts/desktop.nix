@@ -14,6 +14,7 @@
     graphics.enable = true;
     nvidia.enable = true;
     perf.enable = true;
+    cpupower.enable = true;
     pipewire.enable = true;
     ly.enable = true;
   };
@@ -21,6 +22,7 @@
   home-manager.users.csimms.modules = {
     niri.enable = true;
     hyprpaper.enable = true;
+    discord.enable = true;
   };
 
   networking.networkmanager.enable = true;
