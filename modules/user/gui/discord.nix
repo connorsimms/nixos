@@ -1,4 +1,4 @@
-{ ... }:
+{ config, lib, ... }:
 {
   options.modules.discord.enable = lib.mkEnableOption "Discord";
 
