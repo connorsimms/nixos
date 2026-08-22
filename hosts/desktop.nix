@@ -22,6 +22,7 @@
   home-manager.users.csimms.modules = {
     niri.enable = true;
     hyprpaper.enable = true;
+    fuzzel.enable = true;
     discord.enable = true;
   };
 

@@ -8,7 +8,6 @@
     cli.enable = true;
     neovim.enable = true;
     firefox.enable = true;
-    fuzzel.enable = true;
     sioyek.enable = true;
     starship.enable = true;
     zsh.enable = true;
