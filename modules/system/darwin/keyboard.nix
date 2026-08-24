@@ -11,8 +11,8 @@
         remapCapsLockToControl = true;
       };
       defaults = {
-        NSGlobalDomain.InitialKeyRepeat = 20;
-        NSGlobalDomain.KeyRepeat = 3;
+        NSGlobalDomain.InitialKeyRepeat = 15;
+        NSGlobalDomain.KeyRepeat = 2;
         NSGlobalDomain.ApplePressAndHoldEnabled = false;
       };
     };
