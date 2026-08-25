@@ -21,7 +21,7 @@ vim.opt.inccommand = "split"    -- show modifications in split
 
 vim.opt.signcolumn = "number"   -- more compact
 vim.opt.colorcolumn = "100"     -- show column 100
-vim.opt.showmatch = true        -- highlight matching brackets
+vim.opt.showmatch = false       -- do not show matching brackets
 vim.opt.splitbelow = true       -- horizontal splits go below
 vim.opt.splitright = true       -- vertical splits go right
 vim.opt.hidden = true           -- allow hidden buffers

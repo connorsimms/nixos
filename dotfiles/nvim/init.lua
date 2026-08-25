@@ -2,5 +2,7 @@ require('vim._core.ui2').enable({
   enable = true,
 })
 
-require("core")
+require("options")
+require("keymaps")
 require("plugins")
+require("lsp")

@@ -63,5 +63,10 @@
       source = inputs.self + "/dotfiles/nvim/lua";
       recursive = true;
     };
+
+    xdg.configFile."nvim/after/lsp" = {
+      source = inputs.self + "/dotfiles/nvim/after/lsp";
+      recursive = true;
+    };
   };
 }
