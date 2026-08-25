@@ -5,5 +5,6 @@
     ./fuzzel.nix
     ./sioyek.nix
     ./firefox.nix
+    ./zen.nix
   ];
 }
