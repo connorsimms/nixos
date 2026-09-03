@@ -4,6 +4,7 @@
     ./core.nix
     ./git.nix
     ./gh.nix
+    ./glab.nix
     ./debug.nix
     ./profile.nix
   ];

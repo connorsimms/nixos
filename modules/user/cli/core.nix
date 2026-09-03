@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }:
+{ config, lib, pkgs, ... }:
 {
   options.modules.cli.core = {
     enable = lib.mkOption {

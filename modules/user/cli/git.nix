@@ -12,13 +12,19 @@
     programs.git = {
       enable = true;
       settings = {
+        user = {
+          name = "Connor Simms";
+          email = "connorvsimms@gmail.com";
+        };
+
         init.defaultBranch = "main";
         core.editor = "vim";
-      };
-      aliases = {
-        st = "status";
-        sw = "switch";
-        co = "checkout";
+
+        alias = {
+          st = "status";
+          sw = "switch";
+          co = "checkout";
+        };
       };
     };
   };
