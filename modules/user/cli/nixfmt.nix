@@ -5,19 +5,18 @@
   ...
 }:
 {
-  options.modules.cli.gh = {
+  options.modules.cli.nixfmt = {
     enable = lib.mkOption {
       type = lib.types.bool;
       default = config.modules.cli.enable;
-      description = "GitHub CLI";
+      description = "Nixfmt";
     };
   };
 
-  config = lib.mkIf config.modules.cli.gh.enable {
-    modules.cli.git.enable = lib.mkDefault true;
-
+  config = lib.mkIf config.modules.cli.nixfmt.enable {
     home.packages = [
-      pkgs.gh
+      pkgs.nixfmt
+      pkgs.nixfmt-tree
     ];
   };
 }

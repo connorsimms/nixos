@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   options.modules.cli.profile = {
     enable = lib.mkOption {

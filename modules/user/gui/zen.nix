@@ -1,4 +1,9 @@
-{ config, lib, inputs, ... }:
+{
+  config,
+  lib,
+  inputs,
+  ...
+}:
 {
   imports = [ inputs.zen-browser.homeModules.beta ];
 
@@ -42,10 +47,10 @@
         spacesForce = true;
         spaces = {
           "𝛼" = {
-              id = "alpha_workspace";
-              icon = "𝛼";
-              position = 1000;
-           };
+            id = "alpha_workspace";
+            icon = "𝛼";
+            position = 1000;
+          };
           "𝛽" = {
             id = "beta_workspace";
             icon = "𝛽";

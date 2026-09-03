@@ -1,4 +1,9 @@
-{ lib, config, inputs, ... }:
+{
+  lib,
+  config,
+  inputs,
+  ...
+}:
 {
   options.modules.hyprpaper = {
     enable = lib.mkEnableOption "Hyprpaper configuration";

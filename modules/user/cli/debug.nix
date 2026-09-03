@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   options.modules.cli.debug = {
     enable = lib.mkOption {

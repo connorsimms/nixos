@@ -1,6 +1,10 @@
 { inputs, ... }:
-let inherit (inputs)
-  nixpkgs home-manager darwin;
+let
+  inherit (inputs)
+    nixpkgs
+    home-manager
+    darwin
+    ;
 in
 {
   # `nixos-rebuild (switch) --flake <path-to-flake>#<hostname>`

@@ -1,6 +1,13 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
-  niriUsers = lib.filterAttrs (name: userConfig: userConfig.modules.niri.enable or false) config.home-manager.users;
+  niriUsers = lib.filterAttrs (
+    name: userConfig: userConfig.modules.niri.enable or false
+  ) config.home-manager.users;
 in
 {
   config = lib.mkIf (niriUsers != { }) {

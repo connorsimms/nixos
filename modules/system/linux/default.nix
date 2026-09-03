@@ -17,7 +17,10 @@
 
     users.csimms = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" ];
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+      ];
       initialPassword = "password";
     };
   };

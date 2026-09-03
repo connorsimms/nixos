@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   options.modules.ly = {
     enable = lib.mkEnableOption "Ly display manager";

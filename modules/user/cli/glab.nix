@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   options.modules.cli.glab = {
     enable = lib.mkOption {
@@ -12,7 +17,7 @@
     modules.cli.git.enable = lib.mkDefault true;
 
     home.packages = [
-        pkgs.glab
+      pkgs.glab
     ];
   };
 }

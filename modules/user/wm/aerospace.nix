@@ -1,4 +1,9 @@
-{ config, lib, inputs, ... }:
+{
+  config,
+  lib,
+  inputs,
+  ...
+}:
 {
   options.modules.aerospace = {
     enable = lib.mkEnableOption "Aerospace WM";

@@ -1,4 +1,9 @@
-{ config, lib, inputs, ... }:
+{
+  config,
+  lib,
+  inputs,
+  ...
+}:
 {
   options.modules.vim = {
     enable = lib.mkEnableOption "Vim";

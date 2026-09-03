@@ -1,4 +1,10 @@
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   options.modules.niri = {
     enable = lib.mkEnableOption "Niri WM";
@@ -17,7 +23,6 @@
       pkgs.xwayland-satellite
     ];
 
-    xdg.configFile."niri/config.kdl".source =
-      inputs.self + "/dotfiles/niri/config.kdl";
+    xdg.configFile."niri/config.kdl".source = inputs.self + "/dotfiles/niri/config.kdl";
   };
 }

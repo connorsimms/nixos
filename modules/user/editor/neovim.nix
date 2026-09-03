@@ -1,11 +1,17 @@
-{ inputs, config, lib, pkgs, ... }:
+{
+  inputs,
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   options.modules.neovim = {
     enable = lib.mkEnableOption "Neovim configuration";
   };
 
   config = lib.mkIf config.modules.neovim.enable {
-	modules.vim.enable = lib.mkDefault true;
+    modules.vim.enable = lib.mkDefault true;
     programs.neovim = {
       enable = true;
       defaultEditor = true;
