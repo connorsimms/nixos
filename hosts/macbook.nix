@@ -11,6 +11,7 @@
     keyboard.enable = true;
     homebrew.enable = true;
     orbstack.enable = true;
+    spotify.enable = true;
   };
 
   home-manager.users.csimms.modules = {

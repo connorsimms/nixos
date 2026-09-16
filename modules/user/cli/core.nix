@@ -21,10 +21,19 @@
       pkgs.btop
       pkgs.fd
       pkgs.ripgrep
-      pkgs.tealdeer
       pkgs.tree
       pkgs.jq
     ];
+
+    programs.tealdeer = {
+      enable = true;
+      settings = {
+        updates = {
+          auto_update = true;
+          auto_update_interval_days = 7;
+        };
+      };
+    };
 
     programs.bat = {
       enable = true;
