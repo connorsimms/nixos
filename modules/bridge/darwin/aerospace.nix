@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   aerospaceUsers = lib.filterAttrs (
     name: userConfig: userConfig.modules.aerospace.enable or false
@@ -7,8 +12,8 @@ in
 {
   config = lib.mkIf (aerospaceUsers != { }) {
     services.aerospace = {
-        enable = true;
-        package = pkgs.aerospace;
+      enable = true;
+      package = pkgs.aerospace;
     };
   };
 }

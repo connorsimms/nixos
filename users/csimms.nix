@@ -5,6 +5,7 @@
   ];
 
   modules = {
+    lsp.enable = true;
     cli.enable = true;
     neovim.enable = true;
     firefox.enable = true;
