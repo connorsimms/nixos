@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 let
   aerospaceUsers = lib.filterAttrs (
     name: userConfig: userConfig.modules.aerospace.enable or false
@@ -6,7 +6,9 @@ let
 in
 {
   config = lib.mkIf (aerospaceUsers != { }) {
-    homebrew.taps = [ "nikitabobko/tap" ];
-    homebrew.casks = [ "nikitabobko/tap/aerospace" ];
+    services.aerospace = {
+        enable = true;
+        package = pkgs.aerospace;
+    };
   };
 }

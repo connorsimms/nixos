@@ -2,6 +2,7 @@
 {
   imports = [
     ./core.nix
+    ./claude.nix
     ./git.nix
     ./gh.nix
     ./glab.nix
