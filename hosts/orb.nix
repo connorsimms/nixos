@@ -17,11 +17,12 @@
   };
 
   home-manager.users.csimms = {
-    isNormalUser = false;
     imports = [ ../profiles/base.nix ];
     home.stateVersion = "26.11";
     modules = { };
   };
+
+  users.users.csimms.isNormalUser = false;
 
   networking.networkmanager.enable = true;
   time.timeZone = "America/Chicago";
