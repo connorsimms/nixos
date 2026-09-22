@@ -1,9 +1,5 @@
 { ... }:
 {
-  home-manager.users.csimms = {
-    imports = [ ../../users/csimms.nix ];
-  };
-
   home-manager.backupFileExtension = "backup";
   home-manager.useGlobalPkgs = true;
 

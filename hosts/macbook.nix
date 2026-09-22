@@ -14,8 +14,12 @@
     spotify.enable = true;
   };
 
-  home-manager.users.csimms.modules = {
-    aerospace.enable = true;
+  home-manager.users.csimms = {
+    imports = [ ../profiles/extra.nix ];
+    home.stateVersion = "26.11";
+    modules = {
+      aerospace.enable = true;
+    };
   };
 
   nix.enable = false;

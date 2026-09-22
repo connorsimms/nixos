@@ -19,11 +19,16 @@
     ly.enable = true;
   };
 
-  home-manager.users.csimms.modules = {
-    niri.enable = true;
-    hyprpaper.enable = true;
-    fuzzel.enable = true;
-    discord.enable = true;
+  home-manager.users.csimms = {
+    imports = [ ../profiles/extra.nix ];
+    home.stateVersion = "26.11";
+
+    modules = {
+      niri.enable = true;
+      hyprpaper.enable = true;
+      fuzzel.enable = true;
+      discord.enable = true;
+    };
   };
 
   networking.networkmanager.enable = true;

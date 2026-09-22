@@ -14,6 +14,8 @@
   };
 
   home-manager.users.csimms.modules = {
+    imports = [ ../profiles/base.nix ];
+    home.stateVersion = "25.11";
   };
 
   networking.networkmanager.enable = true;
