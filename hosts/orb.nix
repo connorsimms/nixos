@@ -13,9 +13,10 @@
     cpupower.enable = true;
   };
 
-  home-manager.users.csimms.modules = {
+  home-manager.users.csimms = {
     imports = [ ../profiles/base.nix ];
     home.stateVersion = "25.11";
+    modules = { };
   };
 
   networking.networkmanager.enable = true;
