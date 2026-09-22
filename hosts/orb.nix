@@ -17,14 +17,13 @@
   };
 
   home-manager.users.csimms = {
+    isNormalUser = false;
     imports = [ ../profiles/base.nix ];
-    home.stateVersion = "25.11";
+    home.stateVersion = "26.11";
     modules = { };
   };
 
   networking.networkmanager.enable = true;
   time.timeZone = "America/Chicago";
   i18n.defaultLocale = "en_US.UTF-8";
-
-  system.stateVersion = "25.11";
 }

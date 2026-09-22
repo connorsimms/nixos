@@ -16,7 +16,7 @@
     mutableUsers = lib.mkDefault true;
 
     users.csimms = {
-      isNormalUser = true;
+      isNormalUser = lib.mkDefault true;
       extraGroups = [
         "wheel"
         "networkmanager"
