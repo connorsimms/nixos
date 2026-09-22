@@ -21,6 +21,17 @@ in
         }
       ];
     };
+    orb = nixpkgs.lib.nixosSystem {
+      system = "aarch64-linux";
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./hosts/orb.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.extraSpecialArgs = { inherit inputs; };
+        }
+      ];
+    };
   };
   # `darwin-rebuild (switch) --flake <path-to-flake>#<hostname>`
   # `darwin-rebuild (switch) --flake github:<owner>/<repo>#<hostname>`
