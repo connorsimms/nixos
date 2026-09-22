@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   imports = [
     ./systemd-boot.nix
@@ -13,7 +13,7 @@
   ];
 
   users = {
-    mutableUsers = true;
+    mutableUsers = lib.mkDefault true;
 
     users.csimms = {
       isNormalUser = true;
