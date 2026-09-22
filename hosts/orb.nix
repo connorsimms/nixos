@@ -1,6 +1,9 @@
 { ... }:
 {
   imports = [
+    ./orb/configuration.nix
+    ./orb/incus.nix
+    ./orb/orbstack.nix
     ../modules/bridge
     ../modules/bridge/linux
     ../modules/system
