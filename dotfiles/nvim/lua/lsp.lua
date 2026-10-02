@@ -8,11 +8,16 @@ vim.diagnostic.config({
     float = { border = 'rounded' },
 })
 
-vim.lsp.enable({ 'clangd', 'rust_analyzer', 'lua_ls', 'nixd' })
+vim.lsp.enable({ 'clangd', 'rust_analyzer', 'lua_ls', 'nixd', 'pyright' })
 
 -- format on save
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
+    local opts = { buffer = ev.buf }
+
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+
     local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
     if client:supports_method('textDocument/willSaveWaitUntil')
       or not client:supports_method('textDocument/formatting') then
