@@ -12,6 +12,8 @@
     homebrew.enable = true;
     orbstack.enable = true;
     spotify.enable = true;
+    turkey.enable = false;
+    chrome.enable = true;
   };
 
   home-manager.users.csimms = {
