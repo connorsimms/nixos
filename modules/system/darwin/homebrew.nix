@@ -30,9 +30,5 @@
         cleanup = "zap";
       };
     };
-
-    programs.zsh.shellInit = ''
-      eval "$(/opt/homebrew/bin/brew shellenv)"
-    '';
   };
 }

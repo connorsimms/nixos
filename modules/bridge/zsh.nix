@@ -10,9 +10,11 @@ let
   ) config.home-manager.users;
 in
 {
-  programs.zsh.enable = lib.mkIf (zshUsers != { }) true;
+  config = lib.mkIf (zshUsers != { }) {
+    programs.zsh.enable = true;
 
-  users.users = lib.mapAttrs (name: _: {
-    shell = pkgs.zsh;
-  }) zshUsers;
+    users.users = lib.mapAttrs (name: _: {
+      shell = pkgs.zsh;
+    }) zshUsers;
+  };
 }
