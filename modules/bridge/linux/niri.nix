@@ -13,7 +13,6 @@ in
   config = lib.mkIf (niriUsers != { }) {
 
     programs.niri.enable = true;
-    security.rtkit.enable = true;
     security.polkit.enable = true;
     services.udisks2.enable = true;
     programs.xwayland.enable = true;

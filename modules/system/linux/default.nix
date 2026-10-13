@@ -5,7 +5,6 @@
     ./keyboard.nix
     ./graphics.nix
     ./nvidia.nix
-    ./fonts.nix
     ./perf.nix
     ./cpupower.nix
     ./pipewire.nix

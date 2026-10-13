@@ -33,7 +33,7 @@
         };
       }
 
-      (lib.mkIf pkgs.stdenv.isLinux {
+      (lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
         programs.sioyek.package = pkgs.symlinkJoin {
           name = "sioyek-wrapped";
           paths = [ pkgs.sioyek ];

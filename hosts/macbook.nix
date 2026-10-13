@@ -9,9 +9,11 @@
 
   modules = {
     keyboard.enable = true;
+    fonts.enable = true;
     homebrew.enable = true;
     orbstack.enable = true;
     spotify.enable = true;
+    anki.enable = true;
     turkey.enable = false;
     chrome.enable = true;
   };

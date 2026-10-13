@@ -33,13 +33,3 @@ or
 ```bash
 darwin-rebuild switch --flake github:connorsimms/nixos#macbook
 ```
-#### Home-Manager (non-sudo privileges)
-```bash
-git clone https://github.com/connorsimms/nixos
-cd nixos
-home-manager switch --flake .#csimms@server
-```
-or
-```bash
-home-manager switch --flake github:connorsimms/nixos#csimms@server
-```

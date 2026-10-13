@@ -18,13 +18,13 @@
       pkgs.lldb
       pkgs.lsof
     ]
-    ++ lib.optionals pkgs.stdenv.isLinux [
+    ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
       pkgs.strace
       pkgs.ltrace
       pkgs.valgrind
       pkgs.gdb
     ]
-    ++ lib.optionals pkgs.stdenv.isDarwin [
+    ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
     ];
   };
 }

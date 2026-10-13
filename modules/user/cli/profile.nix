@@ -20,11 +20,11 @@
       pkgs.flamegraph
       pkgs.gnuplot
     ]
-    ++ lib.optionals pkgs.stdenv.isLinux [
+    ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
       pkgs.sysstat
       pkgs.bpftrace
     ]
-    ++ lib.optionals pkgs.stdenv.isDarwin [
+    ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
     ];
   };
 }

@@ -1,9 +1,9 @@
 { ... }:
 {
   imports = [
+    ./anki.nix
     ./keyboard.nix
     ./homebrew.nix
-    ./fonts.nix
     ./orbstack.nix
     ./spotify.nix
     ./chrome.nix

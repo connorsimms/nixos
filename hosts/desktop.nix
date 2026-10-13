@@ -11,6 +11,7 @@
   modules = {
     systemd-boot.enable = true;
     keyboard.enable = true;
+    fonts.enable = true;
     graphics.enable = true;
     nvidia.enable = true;
     perf.enable = true;
