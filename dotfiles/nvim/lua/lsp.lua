@@ -8,7 +8,10 @@ vim.diagnostic.config({
     float = { border = 'rounded' },
 })
 
-vim.lsp.enable({ 'clangd', 'rust_analyzer', 'lua_ls', 'nixd', 'pyright' })
+-- Every server here needs its binary installed by a module in
+-- modules/user/lsp/, otherwise it fails to attach and the LspAttach keymaps
+-- below are never set for that filetype.
+vim.lsp.enable({ 'clangd', 'rust_analyzer', 'lua_ls', 'nixd', 'basedpyright', 'ruff' })
 
 -- format on save
 vim.api.nvim_create_autocmd('LspAttach', {
