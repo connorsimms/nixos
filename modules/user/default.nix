@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./darwin.nix
     ./cli
     ./editor
     ./gui

@@ -12,10 +12,6 @@
     fonts.enable = true;
     homebrew.enable = true;
     orbstack.enable = true;
-    spotify.enable = true;
-    anki.enable = true;
-    turkey.enable = false;
-    chrome.enable = true;
   };
 
   home-manager.users.csimms = {
@@ -23,6 +19,13 @@
     home.stateVersion = "26.11";
     modules = {
       aerospace.enable = true;
+
+      # Applications are chosen in the user tree, on either platform; the
+      # Homebrew casks these need are collected by modules/bridge/darwin.
+      anki.enable = true;
+      chrome.enable = true;
+      spotify.enable = true;
+      turkey.enable = true;
     };
   };
 
