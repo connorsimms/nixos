@@ -17,10 +17,24 @@
       profiles.default = {
         presets.betterfox.enable = true;
 
+        # profiles.ini is a read-only nix store symlink, and betterfox turns on
+        # browser.profiles.enabled (the new profiles backend), which wants to
+        # record a StoreID there. Without a pinned one Zen gives up and creates
+        # a fresh profile - six of them accumulated under Profiles/ - and a
+        # fresh profile has no extensions.
+        storeId = "ed4c7800";
+
         settings = {
           "zen.welcome-screen.seen" = true;
           "zen.workspaces.continue-where-left-off" = true;
           "zen.urlbar.behavior" = "float";
+
+          # Betterfox sets this to 5 (SCOPE_PROFILE | SCOPE_APPLICATION), which
+          # drops SCOPE_USER and SCOPE_SYSTEM - the locations an external
+          # installer such as Cold Turkey sideloads into, so its extension got
+          # removed at every startup. The preset applies prefs with mkDefault,
+          # so this wins. 15 = all scopes.
+          "extensions.enabledScopes" = 15;
         };
 
         bookmarks = {
