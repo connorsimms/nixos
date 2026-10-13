@@ -1,6 +1,8 @@
 config-version = 2
 
-start-at-login = true
+# Started by the nix-darwin launchd agent; letting AeroSpace register its own
+# login item as well runs a second, competing instance.
+start-at-login = false
 
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true

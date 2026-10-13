@@ -22,7 +22,7 @@
       anki.enable = true;
       chrome.enable = true;
       spotify.enable = true;
-      turkey.enable = true;
+      turkey.enable = false;
     };
   };
 
