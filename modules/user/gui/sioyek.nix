@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 {
@@ -32,6 +33,11 @@
           };
         };
       }
+
+      (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
+        programs.sioyek.package =
+          inputs.nixpkgs-sioyek.legacyPackages.${pkgs.stdenv.hostPlatform.system}.sioyek;
+      })
 
       (lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
         programs.sioyek.package = pkgs.symlinkJoin {

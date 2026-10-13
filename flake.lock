@@ -91,12 +91,29 @@
         "type": "github"
       }
     },
+    "nixpkgs-sioyek": {
+      "locked": {
+        "lastModified": 1785571196,
+        "narHash": "sha256-KoTsyMQqnXQZq8deCEnu4QkyldkwH/bpMMhUcfMdGIw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "148bab9c1c3c53136ecb44a6ea356a0ed5b39b06",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "148bab9c1c3c53136ecb44a6ea356a0ed5b39b06",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "darwin": "darwin",
         "home-manager": "home-manager",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-sioyek": "nixpkgs-sioyek",
         "zen-browser": "zen-browser"
       }
     },
