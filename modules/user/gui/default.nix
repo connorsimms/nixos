@@ -7,6 +7,7 @@
     ./fuzzel.nix
     ./sioyek.nix
     ./firefox.nix
+    ./rekordbox.nix
     ./spotify.nix
     ./turkey.nix
     ./zen.nix

@@ -21,6 +21,7 @@
       aerospace.enable = true;
       anki.enable = true;
       chrome.enable = true;
+      rekordbox.enable = true;
       spotify.enable = true;
       turkey.enable = false;
     };
