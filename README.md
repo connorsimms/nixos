@@ -34,10 +34,21 @@ or
 darwin-rebuild switch --flake github:connorsimms/nixos#macbook
 ```
 
+#### OrbStack NixOS machine (aarch64-linux)
+OrbStack mounts the mac's home inside the machine, so the mac's checkout is
+the one to build from — no second clone needed:
+```bash
+orb -m nixos sudo nixos-rebuild switch --flake /Users/csimms/nixos#orb
+```
+`hosts/orb.nix` replaces the machine's generated `/etc/nixos`; the parts of it
+worth keeping live in `modules/system/linux/orbstack.nix`, and the per-install
+CA certificate in `hosts/orb/orbstack-ca.pem`. A new OrbStack machine needs a
+host file like `hosts/orb.nix` and its own certificate.
+
 ### Checking before you switch
 ```bash
 nix flake check                # evaluates + builds the host for this system
-nix flake check --all-systems  # evaluates the other host too
+nix flake check --all-systems  # evaluates the other hosts too
 nix fmt                        # nixfmt-tree over the tree
 ```
 `nix eval .#…drvPath` swallows evaluation errors and misreports them as a
@@ -78,6 +89,9 @@ evaluated before they exist, so it is infinite recursion.
 - A leaf that needs a sibling sets it with `lib.mkDefault` inside `config`.
 - Dotfiles are referenced as `inputs.self + "/dotfiles/..."` and attached with
   `xdg.configFile."<path>".source` (`recursive = true` for directories).
+- `modules.docs` installs man pages at the system level, on every host. On
+  macOS the viewer stays Apple's `/usr/bin/man`: man-db cannot find the
+  syscall and libc pages in the Command Line Tools SDK (`man 2 open`).
 - Every language server enabled in `dotfiles/nvim/lua/lsp.lua` needs a matching
   module in `modules/user/lsp/` to put its binary on `PATH`. Without one it
   fails to attach silently and the `LspAttach` keymaps — including `K` — never

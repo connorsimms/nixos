@@ -7,6 +7,7 @@
     ./gh.nix
     ./glab.nix
     ./debug.nix
+    ./man.nix
     ./profile.nix
   ];
 

@@ -18,6 +18,7 @@
     cpupower.enable = true;
     pipewire.enable = true;
     ly.enable = true;
+    docs.enable = true;
   };
 
   home-manager.users.csimms = {

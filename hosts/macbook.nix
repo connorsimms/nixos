@@ -12,6 +12,7 @@
     fonts.enable = true;
     homebrew.enable = true;
     orbstack.enable = true;
+    docs.enable = true;
   };
 
   home-manager.users.csimms = {

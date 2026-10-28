@@ -9,6 +9,8 @@
     ./cpupower.nix
     ./pipewire.nix
     ./ly.nix
+    ./docs.nix
+    ./orbstack.nix
   ];
 
   users = {
