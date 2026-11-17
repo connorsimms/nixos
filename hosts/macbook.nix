@@ -22,6 +22,7 @@
       aerospace.enable = true;
       anki.enable = true;
       chrome.enable = true;
+      openscreen.enable = true;
       rekordbox.enable = true;
       spotify.enable = true;
       turkey.enable = false;
