@@ -6,7 +6,10 @@
   # there without a module here silently fails to attach.
   imports = [
     ./basedpyright.nix
+    ./clangd.nix
+    ./gersemi.nix
     ./lua-language-server.nix
+    ./neocmakelsp.nix
     ./nixd.nix
     ./nixfmt.nix
     ./ruff.nix

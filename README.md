@@ -94,10 +94,28 @@ evaluated before they exist, so it is infinite recursion.
   syscall and libc pages in the Command Line Tools SDK (`man 2 open`).
 - Every language server enabled in `dotfiles/nvim/lua/lsp.lua` needs a matching
   module in `modules/user/lsp/` to put its binary on `PATH`. Without one it
-  fails to attach silently and the `LspAttach` keymaps — including `K` — never
-  get set for that filetype.
+  fails to attach silently and the `LspAttach` keymaps never get set for that
+  filetype.
+- Format-on-save only runs for C/C++, Python and CMake when the project has a
+  `.clang-format`, ruff config or `.gersemirc`; `<leader>cf` formats anywhere.
+- `nix flake init -t ~/nixos#cpp` (or `#python`) scaffolds a project with a
+  devshell and `.envrc`.
 
-### Gotchas worth remembering
+### C++ tooling
+
+- `dotfiles/nvim/after/lsp/clangd.lua` finds nested compile databases
+  (`build/*/`, `out/build/*/`, `cmake-build-*/`) that clangd misses on its own,
+  so no symlink is needed. Run `:lsp restart clangd` after the first configure.
+- `dotfiles/clangd/config.yaml` strips the GCC C++20-module flags CMake adds
+  for `CXX_STANDARD >= 20`, so `CMAKE_CXX_SCAN_FOR_MODULES=OFF` isn't needed.
+  clangd reads it from `~/Library/Preferences/clangd/` on macOS.
+- On macOS, nixpkgs' clangd can't index AppleClang (`/usr/bin/c++`) builds,
+  because its builtin headers clash with the SDK's libc++. `clangd.lua` uses
+  `/usr/bin/clangd` unless the database's compiler lives in `/nix/store`.
+- Start nvim inside the direnv shell. Nix-wrapped compilers report their
+  include paths to clangd (`--query-driver`) based on the environment.
+
+### Weird stuff
 
 - `homebrew.onActivation.cleanup` removes casks that are not declared here.
   It is set to `"uninstall"`; `"zap"` additionally deletes an app's support

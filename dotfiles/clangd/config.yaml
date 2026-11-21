@@ -1,0 +1,13 @@
+# User-level clangd config, linked by modules/user/lsp/clangd.nix. Project
+# .clangd files are merged on top and win on conflicts.
+
+CompileFlags:
+  # CMake >= 3.28 scans for C++20 modules when the standard is >= 20 and the
+  # generator is Ninja. With GCC it injects these flags, which clang rejects
+  # with "unknown argument". With clang it injects `@<obj>.modmap` instead,
+  # which clangd drops on its own when the file hasn't been built yet. A
+  # project that really uses modules can override this in its own .clangd.
+  Remove:
+    - -fmodules-ts
+    - -fmodule-mapper=*
+    - -fdeps-format=*

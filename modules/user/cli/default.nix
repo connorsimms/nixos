@@ -2,6 +2,7 @@
 {
   imports = [
     ./core.nix
+    ./build.nix
     ./claude.nix
     ./git.nix
     ./gh.nix

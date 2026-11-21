@@ -71,6 +71,18 @@ in
     }
   );
 
+  # `nix flake init -t <path-to-flake>#cpp`
+  templates = {
+    cpp = {
+      path = ./templates/cpp;
+      description = "C++ with CMake presets, Ninja and a gcc/clang devshell";
+    };
+    python = {
+      path = ./templates/python;
+      description = "Python with uv on a nix-provided interpreter";
+    };
+  };
+
   # `nix flake check` - run checks for the current system
   # `nix flake check --all-systems` - evaluate all hosts
   checks = {

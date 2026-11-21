@@ -32,17 +32,7 @@
         # LSP
         pkgs.vimPlugins.nvim-lspconfig
 
-        # Snippets & Completion
-        pkgs.vimPlugins.nvim-cmp
-        pkgs.vimPlugins.cmp-nvim-lsp
-        pkgs.vimPlugins.cmp-buffer
-        pkgs.vimPlugins.cmp-path
-        pkgs.vimPlugins.luasnip
-        pkgs.vimPlugins.cmp_luasnip
-        pkgs.vimPlugins.friendly-snippets
-
         # Appearance
-        pkgs.vimPlugins.gruvbox-material
         pkgs.vimPlugins.melange-nvim
         pkgs.vimPlugins.lualine-nvim
       ];
@@ -53,11 +43,6 @@
         pkgs.fd
         pkgs.fzf
         pkgs.ripgrep
-
-        # Treesitter
-        pkgs.tree-sitter
-        pkgs.curl
-        pkgs.gcc
       ];
     };
 
